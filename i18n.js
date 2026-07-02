@@ -6,28 +6,33 @@
 
   var ZH = {
     // nav
-    nav_platforms: '平台', nav_how: '课程流程', nav_tracks: '方向', nav_models: '业务模型', nav_faq: '常见问题', nav_who: '适合人群',
-    cta_apply: '立即申请', cta_seehow: '了解运作方式',
+    nav_platforms: '平台', nav_build: '你将搭建', nav_how: '课程流程', nav_tracks: '方向', nav_models: '业务模型', nav_team: '团队', nav_faq: '常见问题', nav_who: '适合人群',
+    cta_apply: '立即申请', cta_seehow: '了解运作方式', cta_seebuild: '查看学生的成果',
     // hero
     hero_eyebrow: '申请制 AI 商业孵化器 · 硅谷',
     hero_t1: '打造你的 ', hero_t2: 'AI 驱动', hero_t3: '一人公司。',
-    hero_sub: 'ONPECY 是一所申请制 AI 商业孵化器。学生在这里学习搭建真实的工作流、AI 智能体与商业模型 —— 依托连接教育、安全、健康与自动化领域的运营平台。',
+    hero_sub: 'AI 课程大多停留在理论。ONPECY 是一所申请制孵化器 —— 学生在真实的运营平台上搭建可用的 AI 系统：智能体、工作流与商业模型，覆盖教育、安全、健康与自动化。',
     chip_platforms: '真实平台', chip_workflows: 'AI 工作流', chip_incubation: '商业孵化', chip_ecosystem: '硅谷生态',
     flow_start: '起点', flow_you: '你', flow_aiteam: 'AI 团队', flow_workflow: '工作流', flow_automation: '自动化', flow_outcome: '成果', flow_company: '你的公司',
     // proof
     proof_eyebrow: '真实性证明',
     proof_t1: '围绕', proof_t2: '真实运营平台构建。',
     proof_lead: 'ONPECY 不是纸上谈兵的课程。学生在与真实运营机构相连的工作流中动手实践 —— 覆盖安全、教育、健康与企业知识领域。',
-    plat_allcpr_tag: '社区安全', plat_allcpr_text: '社区安全与 CPR / BLS 培训运营、认证及培训中心管理。',
-    plat_usj_tag: '教育', plat_usj_text: '面向全球的教育、招生、职业与学生服务工作流。',
-    plat_sviht_tag: '健康科技', plat_sviht_text: '覆盖社区与会员模式的健康、养生与知识项目。',
-    plat_ssi_tag: '安全情报', plat_ssi_text: '安全、知识管理与企业文档及咨询系统。',
-    // build
-    build_t1: '学生不只是学习 AI，', build_t2: '而是搭建 AI 商业系统。',
-    build_lead: '课程与孵化器的区别在于结课时你拥有什么。ONPECY 的学生带走的是可运行的系统，而不只是笔记。',
-    build_agents_t: 'AI 智能体', build_agents_p: '配置一支智能体团队，运转一家企业的各个环节。',
-    build_flows_t: '自动化工作流', build_flows_p: '把真实业务端到端打通，让一个人也能像一个小团队一样运转。',
-    build_models_t: '商业模型', build_models_p: '把可复制的工作流变成一项你能运营的聚焦服务。',
+    plat_allcpr_tag: '社区安全', plat_allcpr_text: 'CPR / BLS 培训运营与社区安全工作流。',
+    plat_usj_tag: '教育', plat_usj_text: '教育、招生与学生服务工作流。',
+    plat_sviht_tag: '健康科技', plat_sviht_text: '健康科技与养生知识平台。',
+    plat_ssi_tag: '安全情报', plat_ssi_text: '安全、知识管理与企业系统。',
+    // what students actually build (product mockups)
+    sb_eyebrow: '产品预览',
+    sb_t1: '学生真正', sb_t2: '搭建的成果。',
+    sb_lead: '不是幻灯片，而是可用的系统。以下是学生在真实平台工作流中、借助 AI 团队组建的示例界面。',
+    sb_note: '此处展示的界面为学生所搭建系统类型的示意示例，属于演示预览，并非上线产品或业绩保证。',
+    demo_badge: '演示预览',
+    mock1_name: 'AI 客服智能体', mock1_cap: '在所有平台上回答客户问题，不确定时自动升级转接。',
+    mock2_name: '营销工作流', mock2_cap: '把一份简报转化为内容、SEO/GEO 与发布排期。',
+    mock3_name: '运营仪表盘', mock3_cap: '在一个运营者视图中跟踪预约、任务与响应时间。',
+    mock4_name: '知识库智能体', mock4_cap: '基于你自己的文档作答，并标注引用来源。',
+    mock_running: '运行中', mock_stat_bookings: '预约', mock_stat_tasks: '待办', mock_stat_reply: '平均响应', mock_src: '来源',
     // how
     how_t1: '课程如何', how_t2: '运作。',
     how_lead: '四个阶段，从学习工具栈到运营一家一人公司。',
@@ -53,8 +58,27 @@
     feat_m10: '围绕一个聚焦的健康主题，搭建知识与会员业务。',
     feat_m11: '与本地伙伴合作，运营一个城市级的健康社区项目。',
     feat_viewall: '查看全部 14 个 OPC 模型 →',
-    channels_label: '学生将学习搭建的潜在营收渠道',
-    channels_disc: 'ONPECY 教授营收模型的运作原理。收入无法保证，取决于执行、获客、市场环境与经营表现。',
+    channels_label: '学生实践的商业模型',
+    ch_training: '培训服务', ch_marketing: 'AI 营销', ch_kb: '知识库搭建', ch_automation: '自动化咨询', ch_membership: '会员制',
+    channels_disc: '收入无法保证。ONPECY 教授商业模型设计、客户工作流与 AI 运营。结果取决于执行、客户与市场环境。',
+    // who is behind ONPECY (team)
+    team_eyebrow: '谁在打造 ONPECY',
+    team_t1: '由运营者、教育者', team_t2: '与 AI 构建者打造。',
+    team_lead: 'ONPECY 由真正运营培训、教育、健康与安全平台的人打造，并在其之上构建 AI 系统。',
+    role1_t: '创始人 / 项目总监', role1_p: '设定孵化器模式，并将学生对接到真实运营平台。',
+    role2_t: 'AI 工作流负责人', role2_p: '设计学生所用的智能体与自动化技术栈。',
+    role3_t: '平台运营负责人', role3_p: '把学生项目对接进真实的 ALLCPR、USJ、SVIHT 与 SSI 工作流。',
+    role4_t: '教育 / 健康 / 安全顾问', role4_p: '对照各领域的真实标准评审学生作品。',
+    role_soon: '简介即将公布',
+    team_note: '创始人与顾问简介正在最终确定。真实姓名、照片与资历将在下一期开始前于此公布。',
+    // application-based admission
+    adm_eyebrow: '录取如何进行',
+    adm_t1: '申请制', adm_t2: '录取。',
+    adm_lead: 'ONPECY 择优录取。每位学生在动手之前，都会被匹配到一个方向和一个真实工作流。',
+    adm_s1_t: '申请', adm_s1_p: '提交一份简短申请，介绍你的背景与想要搭建的东西。',
+    adm_s2_t: '审核', adm_s2_p: '我们审阅每一份申请，并邀请符合条件的候选人继续。',
+    adm_s3_t: '匹配', adm_s3_p: '为你匹配契合目标的方向与真实平台工作流。',
+    adm_s4_t: '搭建', adm_s4_p: '在 AI 团队与导师评审下，搭建你的一人公司模型。',
     // who
     who_t1: 'ONPECY 适合', who_t2: '这些人。',
     who_1_t: '想要的不止是理论的学生', who_1_p: '想动手搭建真实 AI 工作流，而不只是看课的人。',
@@ -72,7 +96,7 @@
     // ecosystem
     eco_t1: '生态与', eco_t2: '平台。',
     eco_lead: '与我们培训环境相关联的平台与机构，以及学生所学习的标准。',
-    eco_disc: '各标志与商标归其各自所有者所有。其出现用以指代学生所接触的培训标准与工具，本身并不表示赞助或背书。',
+    eco_disc: '各标志与商标归其各自所有者所有。列出某一平台并不表示赞助或背书，除非另有明确说明。',
     // faq
     faq_t1: '你的疑问，', faq_t2: '在此解答。',
     faq_q1: 'ONPECY 是课程还是孵化器？',
@@ -85,15 +109,15 @@
     faq_a4: '与 ALLCPR、USJ、SVIHT 和 SSI 相连的工作流，使用的工具栈包括 ChatGPT、Claude、Gemini、Cursor、自动化工具以及 CRM / 知识库系统。',
     faq_q5: '谁来评审学生的作品？',
     faq_a5: '作品在真实工作流中构建，并对照相关平台的实际运营方式来评审，因此反馈是务实的，而非纸上谈兵。',
-    faq_q6: '我该如何申请？',
-    faq_a6: '录取为申请制。点击“立即申请”开始；符合条件的申请者将获邀继续后续流程。',
+    faq_q6: '申请之后会发生什么？',
+    faq_a6: '我们会审阅你的申请，并向符合条件的申请者发送后续步骤的邮件：一次简短交流、方向与平台匹配，以及参与搭建的邀请。',
     // final cta
     cta_t1: '打造真正', cta_t2: '落地的东西。',
     cta_copy: 'ONPECY 帮助学生把 AI 技能变成工作流，把工作流变成服务，再把服务变成一家一人公司 —— 用一支 AI 团队，而不是一份工资单。',
     cta_s1: '一个人。', cta_s2: '一支 AI 团队。', cta_s3: '一家企业。',
     // footer
     footer_tag: 'AI 驱动的一人公司孵化器。',
-    footer_legal: '© 2026 ONPECY —— AI 驱动的一人公司孵化器。收入无法保证，取决于执行与市场环境。',
+    footer_legal: '© 2026 ONPECY —— AI 驱动的一人公司孵化器。收入无法保证，取决于执行、客户与市场环境。',
 
     // ---- models.html ----
     models_back: '← 返回首页',

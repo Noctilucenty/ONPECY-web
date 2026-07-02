@@ -7,13 +7,13 @@
   <link rel="icon" type="image/png" href="images/favicon.png" />
   <link rel="apple-touch-icon" href="images/favicon.png" />
   <meta property="og:title" content="ONPECY — AI-Powered One Person Company Incubator" />
-  <meta property="og:description" content="An application-based AI business incubator where students build real workflows, AI agents, and business models on operating platforms in education, safety, health, and automation." />
+  <meta property="og:description" content="An application-based AI business incubator where students build real workflows, AI agents, and business models on real operating platforms in education, safety, health, and automation." />
   <meta property="og:image" content="images/image.png" />
   <title>ONPECY — AI-Powered One Person Company Incubator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <!-- ================= SVG ICON SPRITE ================= -->
@@ -55,6 +55,12 @@
       <circle cx="12" cy="12" r="8.6" /><path d="M3.4 12h17.2" />
       <path d="M12 3.4c2.5 2.4 3.9 5.4 3.9 8.6S14.5 18.2 12 20.6C9.5 18.2 8.1 15.2 8.1 12S9.5 5.8 12 3.4Z" />
     </symbol>
+    <symbol id="ic-user" viewBox="0 0 24 24">
+      <circle cx="12" cy="8.4" r="3.7" /><path d="M5.5 19.5a6.6 6.6 0 0 1 13 0" />
+    </symbol>
+    <symbol id="ic-search" viewBox="0 0 24 24">
+      <circle cx="11" cy="11" r="6.2" /><path d="M20 20l-4.4-4.4" />
+    </symbol>
   </svg>
 
   <!-- ================= NAV ================= -->
@@ -66,8 +72,8 @@
       </a>
       <nav class="nav__links" aria-label="Primary">
         <a href="#platforms" data-i18n="nav_platforms">Platforms</a>
+        <a href="#build" data-i18n="nav_build">What you build</a>
         <a href="#how" data-i18n="nav_how">How it works</a>
-        <a href="#tracks" data-i18n="nav_tracks">Tracks</a>
         <a href="models.html" data-i18n="nav_models">Models</a>
         <a href="#faq" data-i18n="nav_faq">FAQ</a>
       </nav>
@@ -81,10 +87,10 @@
     </div>
     <div class="nav__mobile" id="navMobile">
       <a href="#platforms" data-i18n="nav_platforms">Platforms</a>
+      <a href="#build" data-i18n="nav_build">What you build</a>
       <a href="#how" data-i18n="nav_how">How it works</a>
-      <a href="#tracks" data-i18n="nav_tracks">Tracks</a>
       <a href="models.html" data-i18n="nav_models">Models</a>
-      <a href="#who" data-i18n="nav_who">Who it's for</a>
+      <a href="#team" data-i18n="nav_team">Team</a>
       <a href="#faq" data-i18n="nav_faq">FAQ</a>
       <button class="langtoggle langtoggle--block" id="langToggleMobile" type="button">中文</button>
       <a href="apply.html" class="btn btn--primary" data-i18n="cta_apply">Apply Now</a>
@@ -99,10 +105,10 @@
         <div class="hero__copy reveal">
           <span class="eyebrow" data-i18n="hero_eyebrow">Application-based AI business incubator · Silicon Valley</span>
           <h1 class="hero__title"><span data-i18n="hero_t1">Build Your </span><span class="grad" data-i18n="hero_t2">AI-Powered</span><span data-i18n="hero_t3"> One Person Company.</span></h1>
-          <p class="hero__sub" data-i18n="hero_sub">ONPECY is an application-based AI business incubator where students learn to build real workflows, AI agents, and business models — using operating platforms connected to education, safety, health, and automation.</p>
+          <p class="hero__sub" data-i18n="hero_sub">Most AI courses stay theoretical. ONPECY is an application-based incubator where students build real AI systems — agents, workflows, and business models — inside real operating platforms in education, safety, health, and automation.</p>
           <div class="hero__cta">
             <a href="apply.html" class="btn btn--primary" data-i18n="cta_apply">Apply Now</a>
-            <a href="#how" class="btn btn--ghost" data-i18n="cta_seehow">See How It Works</a>
+            <a href="#build" class="btn btn--ghost" data-i18n="cta_seebuild">See what students build</a>
           </div>
           <ul class="trustchips" aria-label="What ONPECY offers">
             <li data-i18n="chip_platforms">Real platforms</li>
@@ -132,7 +138,7 @@
       </div>
     </section>
 
-    <!-- ================= PROOF ================= -->
+    <!-- ================= PROOF: REAL PLATFORMS ================= -->
     <section class="section section--alt" id="platforms">
       <div class="container">
         <div class="section__head reveal">
@@ -144,54 +150,104 @@
           <article class="platform reveal">
             <span class="platform__tag" data-i18n="plat_allcpr_tag">Community Safety</span>
             <h3 class="platform__name">ALLCPR</h3>
-            <p class="platform__text" data-i18n="plat_allcpr_text">Community safety and CPR / BLS training operations, certifications, and center management.</p>
+            <p class="platform__text" data-i18n="plat_allcpr_text">CPR / BLS training operations and community safety workflows.</p>
           </article>
           <article class="platform reveal">
             <span class="platform__tag" data-i18n="plat_usj_tag">Education</span>
             <h3 class="platform__name">USJ</h3>
-            <p class="platform__text" data-i18n="plat_usj_text">Education, admissions, career, and student-service workflows for a global audience.</p>
+            <p class="platform__text" data-i18n="plat_usj_text">Education, admissions, and student service workflows.</p>
           </article>
           <article class="platform reveal">
             <span class="platform__tag" data-i18n="plat_sviht_tag">HealthTech</span>
             <h3 class="platform__name">SVIHT</h3>
-            <p class="platform__text" data-i18n="plat_sviht_text">Health, wellness, and knowledge programs across community and membership models.</p>
+            <p class="platform__text" data-i18n="plat_sviht_text">HealthTech and wellness knowledge platform.</p>
           </article>
           <article class="platform reveal">
             <span class="platform__tag" data-i18n="plat_ssi_tag">Safety Intelligence</span>
             <h3 class="platform__name">SSI</h3>
-            <p class="platform__text" data-i18n="plat_ssi_text">Safety, knowledge management, and enterprise documentation and consulting systems.</p>
+            <p class="platform__text" data-i18n="plat_ssi_text">Safety, knowledge management, and enterprise systems.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= WHAT STUDENTS BUILD ================= -->
+    <!-- ================= WHAT STUDENTS ACTUALLY BUILD (mockups) ================= -->
     <section class="section" id="build">
       <div class="container">
         <div class="section__head reveal">
-          <h2 class="section__title"><span data-i18n="build_t1">Students don't just learn AI.</span><br /><span class="grad" data-i18n="build_t2">They build AI business systems.</span></h2>
-          <p class="section__lead" data-i18n="build_lead">The difference between a course and an incubator is what you have at the end. ONPECY students leave with working systems, not just notes.</p>
+          <span class="eyebrow eyebrow--center" data-i18n="sb_eyebrow">Product previews</span>
+          <h2 class="section__title"><span data-i18n="sb_t1">What students </span><span class="grad" data-i18n="sb_t2">actually build.</span></h2>
+          <p class="section__lead" data-i18n="sb_lead">Not slideware — working systems. These are example interfaces students assemble inside real platform workflows with an AI team.</p>
         </div>
-        <div class="grid grid--3">
-          <article class="card reveal">
-            <span class="card__ico"><svg class="ico"><use href="#ic-robot" /></svg></span>
-            <h3 class="card__title" data-i18n="build_agents_t">AI Agents</h3>
-            <p class="card__text" data-i18n="build_agents_p">Configure a team of agents to run the moving parts of a business.</p>
-            <div class="chips"><span>Marketing</span><span>Customer support</span><span>Sales</span><span>Knowledge</span><span>Operations</span></div>
+        <div class="grid grid--2">
+          <!-- AI Customer Agent -->
+          <article class="mock reveal">
+            <div class="mock__bar" aria-hidden="true"><span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span><span>customer-agent</span></div>
+            <div class="mock__screen">
+              <div class="mk-bubble mk-bubble--user">When does my BLS card expire?</div>
+              <div class="mk-bubble mk-bubble--bot">Your BLS certification is valid until Mar 2027. I can book a renewal at the downtown center — Saturday 10am works. Confirm?</div>
+              <div class="mk-input"><span>Message the agent…</span><b aria-hidden="true"><i class="mk-send"></i></b></div>
+            </div>
+            <div class="mock__foot">
+              <div><div class="mock__name" data-i18n="mock1_name">AI Customer Agent</div><div class="mock__cap" data-i18n="mock1_cap">Answers customer questions across every platform and escalates when unsure.</div></div>
+              <span class="mock__badge" data-i18n="demo_badge">Demo preview</span>
+            </div>
           </article>
-          <article class="card reveal">
-            <span class="card__ico"><svg class="ico"><use href="#ic-flow" /></svg></span>
-            <h3 class="card__title" data-i18n="build_flows_t">Automated Workflows</h3>
-            <p class="card__text" data-i18n="build_flows_p">Wire real operations end-to-end so one person can run like a small team.</p>
-            <div class="chips"><span>CRM</span><span>Content</span><span>Onboarding</span><span>Reporting</span><span>Customer service</span></div>
+
+          <!-- Marketing Workflow -->
+          <article class="mock reveal">
+            <div class="mock__bar" aria-hidden="true"><span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span><span>marketing-flow</span></div>
+            <div class="mock__screen">
+              <div class="mk-wf">
+                <div class="mk-node"><i></i>New brief</div>
+                <div class="mk-link"></div>
+                <div class="mk-node mk-node--on"><i></i>AI content draft <small data-i18n="mock_running">running</small></div>
+                <div class="mk-link"></div>
+                <div class="mk-node"><i></i>SEO / GEO pass</div>
+                <div class="mk-link"></div>
+                <div class="mk-node"><i></i>Schedule &amp; publish</div>
+              </div>
+            </div>
+            <div class="mock__foot">
+              <div><div class="mock__name" data-i18n="mock2_name">Marketing Workflow</div><div class="mock__cap" data-i18n="mock2_cap">Turns one brief into content, SEO/GEO, and a publish schedule.</div></div>
+              <span class="mock__badge" data-i18n="demo_badge">Demo preview</span>
+            </div>
           </article>
-          <article class="card reveal">
-            <span class="card__ico"><svg class="ico"><use href="#ic-rocket" /></svg></span>
-            <h3 class="card__title" data-i18n="build_models_t">Business Models</h3>
-            <p class="card__text" data-i18n="build_models_p">Turn a repeatable workflow into a focused service you can operate.</p>
-            <div class="chips"><span>Training</span><span>Consulting</span><span>Marketing studio</span><span>Knowledge studio</span><span>SaaS</span></div>
+
+          <!-- Operations Dashboard -->
+          <article class="mock reveal">
+            <div class="mock__bar" aria-hidden="true"><span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span><span>operations</span></div>
+            <div class="mock__screen">
+              <div class="mk-stats">
+                <div class="mk-stat"><span data-i18n="mock_stat_bookings">Bookings</span><b>128</b></div>
+                <div class="mk-stat"><span data-i18n="mock_stat_tasks">Open tasks</span><b>12</b></div>
+                <div class="mk-stat"><span data-i18n="mock_stat_reply">Avg reply</span><b>2m</b></div>
+              </div>
+              <div class="mk-chart" aria-hidden="true">
+                <i style="height:38%"></i><i style="height:56%"></i><i style="height:44%"></i><i style="height:72%"></i><i style="height:60%"></i><i style="height:85%"></i><i style="height:68%"></i>
+              </div>
+            </div>
+            <div class="mock__foot">
+              <div><div class="mock__name" data-i18n="mock3_name">Operations Dashboard</div><div class="mock__cap" data-i18n="mock3_cap">Tracks bookings, tasks, and response time in one operator view.</div></div>
+              <span class="mock__badge" data-i18n="demo_badge">Demo preview</span>
+            </div>
+          </article>
+
+          <!-- Knowledge Base Agent -->
+          <article class="mock reveal">
+            <div class="mock__bar" aria-hidden="true"><span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span><span>knowledge-base</span></div>
+            <div class="mock__screen">
+              <div class="mk-search"><svg class="ico" aria-hidden="true"><use href="#ic-search" /></svg>What's the CPR renewal policy?</div>
+              <div class="mk-ans">Certification is valid for 2 years. Renewal requires a skills check-off with a certified instructor and a short written exam.</div>
+              <div class="mk-src"><span data-i18n="mock_src">Sources</span><span>policy.pdf</span><span>handbook §4</span><span>faq</span></div>
+            </div>
+            <div class="mock__foot">
+              <div><div class="mock__name" data-i18n="mock4_name">Knowledge Base Agent</div><div class="mock__cap" data-i18n="mock4_cap">Answers from your own documents with cited sources.</div></div>
+              <span class="mock__badge" data-i18n="demo_badge">Demo preview</span>
+            </div>
           </article>
         </div>
+        <p class="disclaimer" data-i18n="sb_note">Interfaces shown are illustrative examples of the kinds of systems students build. They are demo previews, not live products or performance guarantees.</p>
       </div>
     </section>
 
@@ -323,14 +379,88 @@
         </div>
 
         <div class="channels reveal">
-          <p class="channels__label" data-i18n="channels_label">Potential revenue channels students learn to build</p>
-          <div class="pills pills--center"><span>Training services</span><span>AI marketing</span><span>Knowledge base setup</span><span>Automation consulting</span><span>Memberships</span></div>
-          <p class="disclaimer" data-i18n="channels_disc">ONPECY teaches how revenue models work. Income is not guaranteed and depends on execution, customer acquisition, market conditions, and business performance.</p>
+          <p class="channels__label" data-i18n="channels_label">Business Models Students Practice</p>
+          <div class="pills pills--center"><span data-i18n="ch_training">Training services</span><span data-i18n="ch_marketing">AI marketing</span><span data-i18n="ch_kb">Knowledge base setup</span><span data-i18n="ch_automation">Automation consulting</span><span data-i18n="ch_membership">Memberships</span></div>
+          <p class="disclaimer" data-i18n="channels_disc">Income is not guaranteed. ONPECY teaches business model design, customer workflows, and AI operations. Results depend on execution, customers, and market conditions.</p>
         </div>
       </div>
     </section>
 
-    <!-- ================= WHO ================= -->
+    <!-- ================= WHO IS BEHIND ONPECY (team) ================= -->
+    <section class="section" id="team">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--center" data-i18n="team_eyebrow">Who is behind ONPECY</span>
+          <h2 class="section__title"><span data-i18n="team_t1">Built by operators, educators, </span><span class="grad" data-i18n="team_t2">and AI builders.</span></h2>
+          <p class="section__lead" data-i18n="team_lead">ONPECY is run by people who operate real training, education, health, and safety platforms — and build AI systems on top of them.</p>
+        </div>
+        <div class="grid grid--4">
+          <article class="member reveal">
+            <span class="member__avatar" aria-hidden="true"><svg class="ico"><use href="#ic-user" /></svg></span>
+            <h3 class="member__role" data-i18n="role1_t">Founder / Program Director</h3>
+            <p class="member__desc" data-i18n="role1_p">Sets the incubator model and connects students to real operating platforms.</p>
+            <span class="member__soon" data-i18n="role_soon">Profile coming soon</span>
+          </article>
+          <article class="member reveal">
+            <span class="member__avatar" aria-hidden="true"><svg class="ico"><use href="#ic-user" /></svg></span>
+            <h3 class="member__role" data-i18n="role2_t">AI Workflow Lead</h3>
+            <p class="member__desc" data-i18n="role2_p">Designs the agent and automation stack students build with.</p>
+            <span class="member__soon" data-i18n="role_soon">Profile coming soon</span>
+          </article>
+          <article class="member reveal">
+            <span class="member__avatar" aria-hidden="true"><svg class="ico"><use href="#ic-user" /></svg></span>
+            <h3 class="member__role" data-i18n="role3_t">Platform Operations Lead</h3>
+            <p class="member__desc" data-i18n="role3_p">Bridges student projects into real ALLCPR, USJ, SVIHT, and SSI workflows.</p>
+            <span class="member__soon" data-i18n="role_soon">Profile coming soon</span>
+          </article>
+          <article class="member reveal">
+            <span class="member__avatar" aria-hidden="true"><svg class="ico"><use href="#ic-user" /></svg></span>
+            <h3 class="member__role" data-i18n="role4_t">Education / Health / Safety Advisor</h3>
+            <p class="member__desc" data-i18n="role4_p">Reviews student work against real-world standards in each domain.</p>
+            <span class="member__soon" data-i18n="role_soon">Profile coming soon</span>
+          </article>
+        </div>
+        <p class="team__note" data-i18n="team_note">Founder and advisor profiles are being finalized. Real names, photos, and credentials will be published here before the next cohort.</p>
+      </div>
+    </section>
+
+    <!-- ================= APPLICATION-BASED ADMISSION ================= -->
+    <section class="section section--alt" id="admission">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="eyebrow eyebrow--center" data-i18n="adm_eyebrow">How admission works</span>
+          <h2 class="section__title"><span data-i18n="adm_t1">Application-based </span><span class="grad" data-i18n="adm_t2">admission.</span></h2>
+          <p class="section__lead" data-i18n="adm_lead">ONPECY is selective. Every student is matched to a track and a real workflow before they build.</p>
+        </div>
+        <div class="process reveal">
+          <article class="pstep">
+            <span class="pstep__num" aria-hidden="true"><svg class="num-ico" viewBox="0 0 24 24"><path d="M10 9 L13 6.8 V18 M9.6 18 H16" /></svg></span>
+            <h3 data-i18n="adm_s1_t">Apply</h3>
+            <p data-i18n="adm_s1_p">Submit a short application with your background and what you want to build.</p>
+          </article>
+          <article class="pstep">
+            <span class="pstep__num" aria-hidden="true"><svg class="num-ico" viewBox="0 0 24 24"><path d="M8.6 9.6a3.5 3.5 0 1 1 6 2.6L8.6 18H15.6" /></svg></span>
+            <h3 data-i18n="adm_s2_t">Review</h3>
+            <p data-i18n="adm_s2_p">We review each application and invite qualified candidates to continue.</p>
+          </article>
+          <article class="pstep">
+            <span class="pstep__num" aria-hidden="true"><svg class="num-ico" viewBox="0 0 24 24"><path d="M9 8a3.2 3.2 0 1 1 2.6 5a3.3 3.3 0 1 1 -2.6 5" /></svg></span>
+            <h3 data-i18n="adm_s3_t">Match</h3>
+            <p data-i18n="adm_s3_p">You're matched to a track and a real platform workflow that fits your goals.</p>
+          </article>
+          <article class="pstep">
+            <span class="pstep__num" aria-hidden="true"><svg class="num-ico" viewBox="0 0 24 24"><path d="M13.8 6.5V18 M13.8 6.5L8 14.2H16.4" /></svg></span>
+            <h3 data-i18n="adm_s4_t">Build</h3>
+            <p data-i18n="adm_s4_p">You build your One Person Company model with an AI team and mentor review.</p>
+          </article>
+        </div>
+        <div class="models__cta reveal">
+          <a href="apply.html" class="btn btn--primary" data-i18n="cta_apply">Apply Now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHO IT'S FOR ================= -->
     <section class="section" id="who">
       <div class="container">
         <div class="section__head reveal">
@@ -357,26 +487,8 @@
       </div>
     </section>
 
-    <!-- ================= WHY ================= -->
-    <section class="section section--alt" id="why">
-      <div class="container why__grid">
-        <div class="section__head section__head--left reveal">
-          <span class="eyebrow" data-i18n="why_eyebrow">Why this is different</span>
-          <h2 class="section__title" data-i18n="why_title">Not a generic AI course.</h2>
-          <p class="section__lead" data-i18n="why_lead">ONPECY is built to produce operators, not certificates.</p>
-        </div>
-        <ul class="reasons reveal">
-          <li data-i18n="why_1">Application-based admission, not open enrollment.</li>
-          <li data-i18n="why_2">Built around real business platforms, not hypotheticals.</li>
-          <li data-i18n="why_3">Focused on workflow execution, not only lectures.</li>
-          <li data-i18n="why_4">Students build practical AI agent systems.</li>
-          <li data-i18n="why_5">Business-model focused, not certificate focused.</li>
-        </ul>
-      </div>
-    </section>
-
     <!-- ================= ECOSYSTEM ================= -->
-    <section class="section" id="ecosystem">
+    <section class="section section--alt" id="ecosystem">
       <div class="container">
         <div class="section__head reveal">
           <h2 class="section__title"><span data-i18n="eco_t1">Ecosystem &amp; </span><span class="grad" data-i18n="eco_t2">platforms.</span></h2>
@@ -391,12 +503,12 @@
           <div class="logo logo--text"><span>SSI</span></div>
           <div class="logo logo--text"><span>Microsoft AI</span></div>
         </div>
-        <p class="disclaimer" data-i18n="eco_disc">Logos and trademarks are the property of their respective owners. Their appearance references training standards and tools students work with and does not, by itself, imply sponsorship or endorsement.</p>
+        <p class="disclaimer" data-i18n="eco_disc">Logos and trademarks belong to their respective owners. Listing a platform does not imply sponsorship or endorsement unless explicitly stated.</p>
       </div>
     </section>
 
     <!-- ================= FAQ ================= -->
-    <section class="section section--alt" id="faq">
+    <section class="section" id="faq">
       <div class="container container--narrow">
         <div class="section__head reveal">
           <h2 class="section__title"><span data-i18n="faq_t1">Questions, </span><span class="grad" data-i18n="faq_t2">answered.</span></h2>
@@ -411,7 +523,7 @@
             <p data-i18n="faq_a2">No. Students build with AI tools, automation platforms, and no-code/low-code workflows. The focus is operating systems, not writing everything by hand.</p>
           </details>
           <details class="faq__item">
-            <summary data-i18n="faq_q3">Is revenue guaranteed?</summary>
+            <summary data-i18n="faq_q3">Is income guaranteed?</summary>
             <p data-i18n="faq_a3">No. ONPECY teaches how revenue models work and how to build them. Actual income depends on execution, customer acquisition, market conditions, and business performance.</p>
           </details>
           <details class="faq__item">
@@ -423,8 +535,8 @@
             <p data-i18n="faq_a5">Work is built inside real workflows and reviewed against how the connected platforms actually operate, so feedback is practical rather than theoretical.</p>
           </details>
           <details class="faq__item">
-            <summary data-i18n="faq_q6">How do I apply?</summary>
-            <p data-i18n="faq_a6">Admission is application-based. Use the Apply button to start; qualified applicants are invited to continue the process.</p>
+            <summary data-i18n="faq_q6">What happens after I apply?</summary>
+            <p data-i18n="faq_a6">We review your application and email qualified applicants with next steps: a short conversation, matching to a track and platform, and an invitation to build.</p>
           </details>
         </div>
       </div>
@@ -443,7 +555,7 @@
         </p>
         <div class="hero__cta hero__cta--center">
           <a href="apply.html" class="btn btn--primary" data-i18n="cta_apply">Apply Now</a>
-          <a href="#how" class="btn btn--ghost" data-i18n="cta_seehow">See How It Works</a>
+          <a href="#build" class="btn btn--ghost" data-i18n="cta_seebuild">See what students build</a>
         </div>
       </div>
     </section>
@@ -457,19 +569,19 @@
       </div>
       <nav class="footer__nav" aria-label="Footer">
         <a href="#platforms" data-i18n="nav_platforms">Platforms</a>
+        <a href="#build" data-i18n="nav_build">What you build</a>
         <a href="#how" data-i18n="nav_how">How it works</a>
-        <a href="#tracks" data-i18n="nav_tracks">Tracks</a>
         <a href="models.html" data-i18n="nav_models">Models</a>
-        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="#team" data-i18n="nav_team">Team</a>
         <a href="apply.html" data-i18n="cta_apply">Apply Now</a>
       </nav>
     </div>
     <div class="container footer__legal">
-      <p data-i18n="footer_legal">© 2026 ONPECY — AI-Powered One Person Company Incubator. Revenue is not guaranteed and depends on execution and market conditions.</p>
+      <p data-i18n="footer_legal">© 2026 ONPECY — AI-Powered One Person Company Incubator. Income is not guaranteed and depends on execution, customers, and market conditions.</p>
     </div>
   </footer>
 
-  <script src="i18n.js?v=1"></script>
+  <script src="i18n.js?v=2"></script>
   <script src="app.js?v=3"></script>
 </body>
 </html>
