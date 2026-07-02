@@ -1,0 +1,22 @@
+# Render Blueprint — static site hosting for ONPECY
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: onpecy-web
+    runtime: static
+    # No build step — the site is plain HTML/CSS/JS.
+    buildCommand: "echo 'static site — no build step'"
+    staticPublishPath: .
+    # SPA-style fallback so any unknown path serves the landing page.
+    # (Static assets like /styles.css are matched first, before this rewrite.)
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    headers:
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN
