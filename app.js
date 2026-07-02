@@ -60,6 +60,18 @@
     });
   });
 
+  /* ---- open the tab that matches the URL hash (e.g. models.html#usj) ---- */
+  function activateFromHash() {
+    var key = (window.location.hash || '').replace('#', '');
+    if (!key) return;
+    var match = tabs.filter(function (t) { return t.getAttribute('data-tab') === key; })[0];
+    if (match) activate(match);
+  }
+  if (tabs.length) {
+    activateFromHash();
+    window.addEventListener('hashchange', activateFromHash);
+  }
+
   /* ---- scroll reveal ---- */
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
