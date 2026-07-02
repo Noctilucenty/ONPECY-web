@@ -1,3 +1,11 @@
 .DS_Store
 *.docx
 node_modules/
+.claude/
+
+# Unused source / export assets (not referenced by the site)
+images/app.js
+images/ONPECY.png
+images/ALLCPR.webp
+images/Big LOGO.png
+images/*gigapixel*

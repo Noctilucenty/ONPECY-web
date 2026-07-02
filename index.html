@@ -12,39 +12,82 @@
   <title>ONPECY — AI-Powered One Person Company Incubator</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
 </head>
 <body>
+  <!-- ================= SVG ICON SPRITE ================= -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <linearGradient id="icoGrad" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#67E8F9" />
+        <stop offset=".55" stop-color="#3B82F6" />
+        <stop offset="1" stop-color="#8B5CF6" />
+      </linearGradient>
+    </defs>
+    <symbol id="ic-robot" viewBox="0 0 24 24">
+      <circle cx="12" cy="3.6" r="1.1" /><path d="M12 4.7V7" />
+      <rect x="4.5" y="7" width="15" height="12" rx="3.2" />
+      <path d="M3 12.5v1.5M21 12.5v1.5" /><path d="M9.2 12.2v1.8M14.8 12.2v1.8" /><path d="M9.5 16.3h5" />
+    </symbol>
+    <symbol id="ic-flow" viewBox="0 0 24 24">
+      <circle cx="6" cy="5.8" r="2.2" /><circle cx="6" cy="18.2" r="2.2" /><circle cx="18" cy="12" r="2.2" />
+      <path d="M8.2 5.8H12a3 3 0 0 1 3 3v.8" /><path d="M8.2 18.2H12a3 3 0 0 0 3-3v-.8" />
+    </symbol>
+    <symbol id="ic-gear" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="3.1" />
+      <path d="M12 2.8v2.6M12 18.6v2.6M21.2 12h-2.6M5.4 12H2.8M18.5 5.5l-1.8 1.8M7.3 16.7l-1.8 1.8M18.5 18.5l-1.8-1.8M7.3 7.3 5.5 5.5" />
+    </symbol>
+    <symbol id="ic-rocket" viewBox="0 0 24 24">
+      <path d="M12 2.6c2.9 1.7 4.6 5 4.6 8.8L14 14h-4l-2.6-2.6C7.4 7.6 9.1 4.3 12 2.6Z" />
+      <circle cx="12" cy="9.4" r="1.5" /><path d="M10 14l-2.4 2.6 2.6-.8M14 14l2.4 2.6-2.6-.8" /><path d="M12 17.2v3" />
+    </symbol>
+    <symbol id="ic-shield" viewBox="0 0 24 24">
+      <path d="M12 2.8l7 3v5.2c0 4.6-3 7.7-7 9.2-4-1.5-7-4.6-7-9.2V5.8l7-3Z" /><path d="M12 8.6v5.6M9.2 11.4h5.6" />
+    </symbol>
+    <symbol id="ic-cap" viewBox="0 0 24 24">
+      <path d="M2.5 8.8 12 4.8l9.5 4-9.5 4-9.5-4Z" /><path d="M6.8 11v4.2c0 1.2 2.3 2.2 5.2 2.2s5.2-1 5.2-2.2V11" /><path d="M21.5 8.8v4.6" />
+    </symbol>
+    <symbol id="ic-heart" viewBox="0 0 24 24">
+      <path d="M12 20.2S3.6 15.4 3.6 9.6C3.6 6.9 5.7 4.9 8.2 4.9c1.7 0 3.1 1 3.8 2.3.7-1.3 2.1-2.3 3.8-2.3 2.5 0 4.6 2 4.6 4.7 0 5.8-8.4 10.6-8.4 10.6Z" />
+    </symbol>
+    <symbol id="ic-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.6" /><path d="M3.4 12h17.2" />
+      <path d="M12 3.4c2.5 2.4 3.9 5.4 3.9 8.6S14.5 18.2 12 20.6C9.5 18.2 8.1 15.2 8.1 12S9.5 5.8 12 3.4Z" />
+    </symbol>
+  </svg>
+
   <!-- ================= NAV ================= -->
   <header class="nav" id="nav">
     <div class="nav__inner">
       <a href="#hero" class="brand" aria-label="ONPECY home">
-        <img class="brand__mark" src="images/onpecy-mark.png" alt="" width="28" height="28" />
+        <img class="brand__mark" src="images/onpecy-icon.png" alt="" width="30" height="30" />
         <span class="brand__name">ONPECY</span>
       </a>
       <nav class="nav__links" aria-label="Primary">
-        <a href="#platforms">Platforms</a>
-        <a href="#how">How it works</a>
-        <a href="#tracks">Tracks</a>
-        <a href="models.html">Models</a>
-        <a href="#faq">FAQ</a>
+        <a href="#platforms" data-i18n="nav_platforms">Platforms</a>
+        <a href="#how" data-i18n="nav_how">How it works</a>
+        <a href="#tracks" data-i18n="nav_tracks">Tracks</a>
+        <a href="models.html" data-i18n="nav_models">Models</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
       </nav>
       <div class="nav__actions">
-        <a href="#apply" class="btn btn--primary btn--sm">Apply Now</a>
+        <button class="langtoggle" id="langToggle" type="button" aria-label="Switch language">中文</button>
+        <a href="apply.html" class="btn btn--primary btn--sm" data-i18n="cta_apply">Apply Now</a>
       </div>
       <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
     <div class="nav__mobile" id="navMobile">
-      <a href="#platforms">Platforms</a>
-      <a href="#how">How it works</a>
-      <a href="#tracks">Tracks</a>
-      <a href="models.html">Models</a>
-      <a href="#who">Who it's for</a>
-      <a href="#faq">FAQ</a>
-      <a href="#apply" class="btn btn--primary">Apply Now</a>
+      <a href="#platforms" data-i18n="nav_platforms">Platforms</a>
+      <a href="#how" data-i18n="nav_how">How it works</a>
+      <a href="#tracks" data-i18n="nav_tracks">Tracks</a>
+      <a href="models.html" data-i18n="nav_models">Models</a>
+      <a href="#who" data-i18n="nav_who">Who it's for</a>
+      <a href="#faq" data-i18n="nav_faq">FAQ</a>
+      <button class="langtoggle langtoggle--block" id="langToggleMobile" type="button">中文</button>
+      <a href="apply.html" class="btn btn--primary" data-i18n="cta_apply">Apply Now</a>
     </div>
   </header>
 
@@ -54,70 +97,69 @@
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__grid">
         <div class="hero__copy reveal">
-          <span class="eyebrow">Application-based AI business incubator · Silicon Valley</span>
-          <h1 class="hero__title">Build Your <span class="grad">AI-Powered</span> One Person Company.</h1>
-          <p class="hero__sub">ONPECY is an application-based AI business incubator where students learn to build real workflows, AI agents, and business models — using operating platforms connected to education, safety, health, and automation.</p>
+          <span class="eyebrow" data-i18n="hero_eyebrow">Application-based AI business incubator · Silicon Valley</span>
+          <h1 class="hero__title"><span data-i18n="hero_t1">Build Your </span><span class="grad" data-i18n="hero_t2">AI-Powered</span><span data-i18n="hero_t3"> One Person Company.</span></h1>
+          <p class="hero__sub" data-i18n="hero_sub">ONPECY is an application-based AI business incubator where students learn to build real workflows, AI agents, and business models — using operating platforms connected to education, safety, health, and automation.</p>
           <div class="hero__cta">
-            <a href="#apply" class="btn btn--primary">Apply Now</a>
-            <a href="#how" class="btn btn--ghost">See How It Works</a>
+            <a href="apply.html" class="btn btn--primary" data-i18n="cta_apply">Apply Now</a>
+            <a href="#how" class="btn btn--ghost" data-i18n="cta_seehow">See How It Works</a>
           </div>
           <ul class="trustchips" aria-label="What ONPECY offers">
-            <li>Real platforms</li>
-            <li>AI workflows</li>
-            <li>Business incubation</li>
-            <li>Silicon Valley ecosystem</li>
+            <li data-i18n="chip_platforms">Real platforms</li>
+            <li data-i18n="chip_workflows">AI workflows</li>
+            <li data-i18n="chip_incubation">Business incubation</li>
+            <li data-i18n="chip_ecosystem">Silicon Valley ecosystem</li>
           </ul>
         </div>
 
-        <!-- Hero flow diagram -->
         <div class="flow reveal" aria-label="From you to your company" role="img">
           <div class="flow__node flow__node--you">
-            <span class="flow__tag">Start</span>
-            <span class="flow__label">You</span>
+            <span class="flow__tag" data-i18n="flow_start">Start</span>
+            <span class="flow__label" data-i18n="flow_you">You</span>
           </div>
           <div class="flow__line"></div>
-          <div class="flow__node"><span class="flow__ico">🤖</span><span class="flow__label">AI Team</span></div>
+          <div class="flow__node"><span class="flow__ico"><svg class="ico"><use href="#ic-robot" /></svg></span><span class="flow__label" data-i18n="flow_aiteam">AI Team</span></div>
           <div class="flow__line"></div>
-          <div class="flow__node"><span class="flow__ico">🔀</span><span class="flow__label">Workflow</span></div>
+          <div class="flow__node"><span class="flow__ico"><svg class="ico"><use href="#ic-flow" /></svg></span><span class="flow__label" data-i18n="flow_workflow">Workflow</span></div>
           <div class="flow__line"></div>
-          <div class="flow__node"><span class="flow__ico">⚙️</span><span class="flow__label">Automation</span></div>
+          <div class="flow__node"><span class="flow__ico"><svg class="ico"><use href="#ic-gear" /></svg></span><span class="flow__label" data-i18n="flow_automation">Automation</span></div>
           <div class="flow__line"></div>
           <div class="flow__node flow__node--company">
-            <span class="flow__tag">Outcome</span>
-            <span class="flow__label">Your Company</span>
+            <span class="flow__tag" data-i18n="flow_outcome">Outcome</span>
+            <span class="flow__label" data-i18n="flow_company">Your Company</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= PROOF: REAL PLATFORMS ================= -->
+    <!-- ================= PROOF ================= -->
     <section class="section section--alt" id="platforms">
       <div class="container">
         <div class="section__head reveal">
-          <span class="eyebrow eyebrow--center">The proof</span>
-          <h2 class="section__title">Built around <span class="grad">real operating platforms.</span></h2>
-          <p class="section__lead">ONPECY isn't a hypothetical curriculum. Students build inside workflows connected to organizations that actually operate — in safety, education, health, and enterprise knowledge.</p>
+          <span class="eyebrow eyebrow--center" data-i18n="proof_eyebrow">The proof</span>
+          <h2 class="section__title"><span data-i18n="proof_t1">Built around </span><span class="grad" data-i18n="proof_t2">real operating platforms.</span></h2>
+          <p class="section__lead" data-i18n="proof_lead">ONPECY isn't a hypothetical curriculum. Students build inside workflows connected to organizations that actually operate — in safety, education, health, and enterprise knowledge.</p>
         </div>
         <div class="grid grid--4">
           <article class="platform reveal">
-            <span class="platform__tag">Community Safety</span>
+            <span class="platform__tag" data-i18n="plat_allcpr_tag">Community Safety</span>
             <h3 class="platform__name">ALLCPR</h3>
-            <p class="platform__text">Community safety and CPR / BLS training operations, certifications, and center management.</p>
+            <p class="platform__text" data-i18n="plat_allcpr_text">Community safety and CPR / BLS training operations, certifications, and center management.</p>
           </article>
           <article class="platform reveal">
-            <span class="platform__tag">Education</span>
+            <span class="platform__tag" data-i18n="plat_usj_tag">Education</span>
             <h3 class="platform__name">USJ</h3>
-            <p class="platform__text">Education, admissions, career, and student-service workflows for a global audience.</p>
+            <p class="platform__text" data-i18n="plat_usj_text">Education, admissions, career, and student-service workflows for a global audience.</p>
           </article>
           <article class="platform reveal">
-            <span class="platform__tag">HealthTech</span>
+            <span class="platform__tag" data-i18n="plat_sviht_tag">HealthTech</span>
             <h3 class="platform__name">SVIHT</h3>
-            <p class="platform__text">Health, wellness, and knowledge programs across community and membership models.</p>
+            <p class="platform__text" data-i18n="plat_sviht_text">Health, wellness, and knowledge programs across community and membership models.</p>
           </article>
           <article class="platform reveal">
-            <span class="platform__tag">Safety Intelligence</span>
+            <span class="platform__tag" data-i18n="plat_ssi_tag">Safety Intelligence</span>
             <h3 class="platform__name">SSI</h3>
-            <p class="platform__text">Safety, knowledge management, and enterprise documentation and consulting systems.</p>
+            <p class="platform__text" data-i18n="plat_ssi_text">Safety, knowledge management, and enterprise documentation and consulting systems.</p>
           </article>
         </div>
       </div>
@@ -127,26 +169,26 @@
     <section class="section" id="build">
       <div class="container">
         <div class="section__head reveal">
-          <h2 class="section__title">Students don't just learn AI.<br /><span class="grad">They build AI business systems.</span></h2>
-          <p class="section__lead">The difference between a course and an incubator is what you have at the end. ONPECY students leave with working systems, not just notes.</p>
+          <h2 class="section__title"><span data-i18n="build_t1">Students don't just learn AI.</span><br /><span class="grad" data-i18n="build_t2">They build AI business systems.</span></h2>
+          <p class="section__lead" data-i18n="build_lead">The difference between a course and an incubator is what you have at the end. ONPECY students leave with working systems, not just notes.</p>
         </div>
         <div class="grid grid--3">
           <article class="card reveal">
-            <span class="card__ico">🤖</span>
-            <h3 class="card__title">AI Agents</h3>
-            <p class="card__text">Configure a team of agents to run the moving parts of a business.</p>
+            <span class="card__ico"><svg class="ico"><use href="#ic-robot" /></svg></span>
+            <h3 class="card__title" data-i18n="build_agents_t">AI Agents</h3>
+            <p class="card__text" data-i18n="build_agents_p">Configure a team of agents to run the moving parts of a business.</p>
             <div class="chips"><span>Marketing</span><span>Customer support</span><span>Sales</span><span>Knowledge</span><span>Operations</span></div>
           </article>
           <article class="card reveal">
-            <span class="card__ico">🔀</span>
-            <h3 class="card__title">Automated Workflows</h3>
-            <p class="card__text">Wire real operations end-to-end so one person can run like a small team.</p>
+            <span class="card__ico"><svg class="ico"><use href="#ic-flow" /></svg></span>
+            <h3 class="card__title" data-i18n="build_flows_t">Automated Workflows</h3>
+            <p class="card__text" data-i18n="build_flows_p">Wire real operations end-to-end so one person can run like a small team.</p>
             <div class="chips"><span>CRM</span><span>Content</span><span>Onboarding</span><span>Reporting</span><span>Customer service</span></div>
           </article>
           <article class="card reveal">
-            <span class="card__ico">🚀</span>
-            <h3 class="card__title">Business Models</h3>
-            <p class="card__text">Turn a repeatable workflow into a focused service you can operate.</p>
+            <span class="card__ico"><svg class="ico"><use href="#ic-rocket" /></svg></span>
+            <h3 class="card__title" data-i18n="build_models_t">Business Models</h3>
+            <p class="card__text" data-i18n="build_models_p">Turn a repeatable workflow into a focused service you can operate.</p>
             <div class="chips"><span>Training</span><span>Consulting</span><span>Marketing studio</span><span>Knowledge studio</span><span>SaaS</span></div>
           </article>
         </div>
@@ -157,74 +199,74 @@
     <section class="section section--alt" id="how">
       <div class="container">
         <div class="section__head reveal">
-          <h2 class="section__title">How the program <span class="grad">works.</span></h2>
-          <p class="section__lead">Four stages, from learning the stack to operating a One Person Company.</p>
+          <h2 class="section__title"><span data-i18n="how_t1">How the program </span><span class="grad" data-i18n="how_t2">works.</span></h2>
+          <p class="section__lead" data-i18n="how_lead">Four stages, from learning the stack to operating a One Person Company.</p>
         </div>
         <ol class="steps reveal">
           <li class="step">
-            <span class="step__num">1</span>
+            <span class="step__num" aria-hidden="true"><svg class="num-ico" viewBox="0 0 24 24"><path d="M10 9 L13 6.8 V18 M9.6 18 H16" /></svg></span>
             <div class="step__body">
-              <h3>Learn the AI business stack</h3>
-              <p>Master the tools real operators use — models, automation, CRM, and knowledge bases.</p>
+              <h3 data-i18n="how_s1_t">Learn the AI business stack</h3>
+              <p data-i18n="how_s1_p">Master the tools real operators use — models, automation, CRM, and knowledge bases.</p>
               <div class="pills"><span>ChatGPT</span><span>Claude</span><span>Gemini</span><span>Cursor</span><span>n8n</span><span>Zapier</span><span>HubSpot</span><span>Knowledge bases</span></div>
             </div>
           </li>
           <li class="step">
-            <span class="step__num">2</span>
+            <span class="step__num" aria-hidden="true"><svg class="num-ico" viewBox="0 0 24 24"><path d="M8.6 9.6a3.5 3.5 0 1 1 6 2.6L8.6 18H15.6" /></svg></span>
             <div class="step__body">
-              <h3>Build inside real workflows</h3>
-              <p>Practice with business cases drawn from ONPECY's operating platforms — not toy exercises.</p>
+              <h3 data-i18n="how_s2_t">Build inside real workflows</h3>
+              <p data-i18n="how_s2_p">Practice with business cases drawn from ONPECY's operating platforms — not toy exercises.</p>
             </div>
           </li>
           <li class="step">
-            <span class="step__num">3</span>
+            <span class="step__num" aria-hidden="true"><svg class="num-ico" viewBox="0 0 24 24"><path d="M9 8a3.2 3.2 0 1 1 2.6 5a3.3 3.3 0 1 1 -2.6 5" /></svg></span>
             <div class="step__body">
-              <h3>Launch a One Person Company model</h3>
-              <p>Choose a focused track and build a repeatable service or system you can actually run.</p>
+              <h3 data-i18n="how_s3_t">Launch a One Person Company model</h3>
+              <p data-i18n="how_s3_p">Choose a focused track and build a repeatable service or system you can actually run.</p>
             </div>
           </li>
           <li class="step">
-            <span class="step__num">4</span>
+            <span class="step__num" aria-hidden="true"><svg class="num-ico" viewBox="0 0 24 24"><path d="M13.8 6.5V18 M13.8 6.5L8 14.2H16.4" /></svg></span>
             <div class="step__body">
-              <h3>Operate and scale</h3>
-              <p>Run the workflow as a business, using AI agents and automation to expand capacity.</p>
+              <h3 data-i18n="how_s4_t">Operate and scale</h3>
+              <p data-i18n="how_s4_p">Run the workflow as a business, using AI agents and automation to expand capacity.</p>
             </div>
           </li>
         </ol>
       </div>
     </section>
 
-    <!-- ================= FOUR TRACKS ================= -->
+    <!-- ================= TRACKS ================= -->
     <section class="section" id="tracks">
       <div class="container">
         <div class="section__head reveal">
-          <h2 class="section__title">Four tracks. <span class="grad">One focused path.</span></h2>
-          <p class="section__lead">Each track maps to a real platform and a clear kind of business to build.</p>
+          <h2 class="section__title"><span data-i18n="tracks_t1">Four tracks. </span><span class="grad" data-i18n="tracks_t2">One focused path.</span></h2>
+          <p class="section__lead" data-i18n="tracks_lead">Each track maps to a real platform and a clear kind of business to build.</p>
         </div>
         <div class="grid grid--4">
           <article class="track reveal">
-            <span class="track__ico">🚑</span>
+            <span class="track__ico"><svg class="ico"><use href="#ic-shield" /></svg></span>
             <h3 class="track__name">ALLCPR OPC</h3>
-            <p class="track__text">Community safety, training centers, and certification businesses.</p>
-            <a href="models.html#allcpr" class="link">Explore models →</a>
+            <p class="track__text" data-i18n="track_allcpr">Community safety, training centers, and certification businesses.</p>
+            <a href="models.html#allcpr" class="link" data-i18n="explore_models">Explore models →</a>
           </article>
           <article class="track reveal">
-            <span class="track__ico">🎓</span>
+            <span class="track__ico"><svg class="ico"><use href="#ic-cap" /></svg></span>
             <h3 class="track__name">USJ OPC</h3>
-            <p class="track__text">Admissions, interview, and career service studios.</p>
-            <a href="models.html#usj" class="link">Explore models →</a>
+            <p class="track__text" data-i18n="track_usj">Admissions, interview, and career service studios.</p>
+            <a href="models.html#usj" class="link" data-i18n="explore_models">Explore models →</a>
           </article>
           <article class="track reveal">
-            <span class="track__ico">❤️</span>
+            <span class="track__ico"><svg class="ico"><use href="#ic-heart" /></svg></span>
             <h3 class="track__name">SVIHT OPC</h3>
-            <p class="track__text">Health knowledge, wellness, and community programs.</p>
-            <a href="models.html#sviht" class="link">Explore models →</a>
+            <p class="track__text" data-i18n="track_sviht">Health knowledge, wellness, and community programs.</p>
+            <a href="models.html#sviht" class="link" data-i18n="explore_models">Explore models →</a>
           </article>
           <article class="track reveal">
-            <span class="track__ico">🌍</span>
+            <span class="track__ico"><svg class="ico"><use href="#ic-globe" /></svg></span>
             <h3 class="track__name">SSI OPC</h3>
-            <p class="track__text">Safety intelligence, knowledge management, and enterprise systems.</p>
-            <a href="models.html#ssi" class="link">Explore models →</a>
+            <p class="track__text" data-i18n="track_ssi">Safety intelligence, knowledge management, and enterprise systems.</p>
+            <a href="models.html#ssi" class="link" data-i18n="explore_models">Explore models →</a>
           </article>
         </div>
       </div>
@@ -234,101 +276,101 @@
     <section class="section section--alt" id="models">
       <div class="container">
         <div class="section__head reveal">
-          <h2 class="section__title">Featured <span class="grad">OPC models.</span></h2>
-          <p class="section__lead">A focused look at what students build. Fourteen models exist across the four tracks — here are six of the most popular.</p>
+          <h2 class="section__title"><span data-i18n="feat_t1">Featured </span><span class="grad" data-i18n="feat_t2">OPC models.</span></h2>
+          <p class="section__lead" data-i18n="feat_lead">A focused look at what students build. Fourteen models exist across the four tracks — here are six of the most popular.</p>
         </div>
         <div class="grid grid--3">
           <article class="model reveal">
             <span class="model__num">ALLCPR · OPC 4</span>
             <h3 class="model__name">AI GEO Marketing Studio</h3>
-            <p class="model__text">Run an AI-driven marketing studio for content, SEO/GEO, and websites.</p>
+            <p class="model__text" data-i18n="feat_m4">Run an AI-driven marketing studio for content, SEO/GEO, and websites.</p>
             <div class="chips"><span>SEO</span><span>GEO</span><span>AI Content</span><span>Websites</span></div>
           </article>
           <article class="model reveal">
             <span class="model__num">USJ · OPC 9</span>
             <h3 class="model__name">AI Deployment Studio</h3>
-            <p class="model__text">A forward-deploy path — implement AI workflows, automation, and knowledge bases.</p>
+            <p class="model__text" data-i18n="feat_m9">A forward-deploy path — implement AI workflows, automation, and knowledge bases.</p>
             <div class="chips"><span>Automation</span><span>Workflows</span><span>Knowledge bases</span></div>
           </article>
           <article class="model reveal">
             <span class="model__num">ALLCPR · OPC 1</span>
             <h3 class="model__name">Training Center Operator</h3>
-            <p class="model__text">Operate a training center delivering CPR, BLS, and corporate training.</p>
+            <p class="model__text" data-i18n="feat_m1">Operate a training center delivering CPR, BLS, and corporate training.</p>
             <div class="chips"><span>CPR</span><span>BLS</span><span>Corporate Training</span></div>
           </article>
           <article class="model reveal">
             <span class="model__num">USJ · OPC 8</span>
             <h3 class="model__name">Career Studio</h3>
-            <p class="model__text">Build an AI career development studio for resumes, coaching, and job guidance.</p>
+            <p class="model__text" data-i18n="feat_m8">Build an AI career development studio for resumes, coaching, and job guidance.</p>
             <div class="chips"><span>Resume</span><span>Coaching</span><span>Job guidance</span></div>
           </article>
           <article class="model reveal">
             <span class="model__num">SVIHT · OPC 10</span>
             <h3 class="model__name">Knowledge Studio</h3>
-            <p class="model__text">Build a knowledge and membership business around a focused health topic.</p>
+            <p class="model__text" data-i18n="feat_m10">Build a knowledge and membership business around a focused health topic.</p>
             <div class="chips"><span>Courses</span><span>Knowledge base</span><span>Membership</span></div>
           </article>
           <article class="model reveal">
             <span class="model__num">SVIHT · OPC 11</span>
             <h3 class="model__name">City Health Partner</h3>
-            <p class="model__text">Operate a city-level health community program with local partners.</p>
+            <p class="model__text" data-i18n="feat_m11">Operate a city-level health community program with local partners.</p>
             <div class="chips"><span>Community</span><span>Membership</span><span>Consulting</span></div>
           </article>
         </div>
 
         <div class="models__cta reveal">
-          <a href="models.html" class="btn btn--ghost">View all 14 OPC models →</a>
+          <a href="models.html" class="btn btn--ghost" data-i18n="feat_viewall">View all 14 OPC models →</a>
         </div>
 
         <div class="channels reveal">
-          <p class="channels__label">Potential revenue channels students learn to build</p>
+          <p class="channels__label" data-i18n="channels_label">Potential revenue channels students learn to build</p>
           <div class="pills pills--center"><span>Training services</span><span>AI marketing</span><span>Knowledge base setup</span><span>Automation consulting</span><span>Memberships</span></div>
-          <p class="disclaimer">ONPECY teaches how revenue models work. Income is not guaranteed and depends on execution, customer acquisition, market conditions, and business performance.</p>
+          <p class="disclaimer" data-i18n="channels_disc">ONPECY teaches how revenue models work. Income is not guaranteed and depends on execution, customer acquisition, market conditions, and business performance.</p>
         </div>
       </div>
     </section>
 
-    <!-- ================= WHO IT'S FOR ================= -->
+    <!-- ================= WHO ================= -->
     <section class="section" id="who">
       <div class="container">
         <div class="section__head reveal">
-          <h2 class="section__title">Who ONPECY is <span class="grad">for.</span></h2>
+          <h2 class="section__title"><span data-i18n="who_t1">Who ONPECY is </span><span class="grad" data-i18n="who_t2">for.</span></h2>
         </div>
         <div class="grid grid--4">
           <article class="persona reveal">
-            <h3>Students who want more than theory</h3>
-            <p>People who want to build real AI workflows, not just watch lessons.</p>
+            <h3 data-i18n="who_1_t">Students who want more than theory</h3>
+            <p data-i18n="who_1_p">People who want to build real AI workflows, not just watch lessons.</p>
           </article>
           <article class="persona reveal">
-            <h3>Future founders</h3>
-            <p>People who want to turn skills into a business model they can operate.</p>
+            <h3 data-i18n="who_2_t">Future founders</h3>
+            <p data-i18n="who_2_p">People who want to turn skills into a business model they can operate.</p>
           </article>
           <article class="persona reveal">
-            <h3>Operators &amp; builders</h3>
-            <p>People drawn to automation, marketing, education, health, and safety.</p>
+            <h3 data-i18n="who_3_t">Operators &amp; builders</h3>
+            <p data-i18n="who_3_p">People drawn to automation, marketing, education, health, and safety.</p>
           </article>
           <article class="persona reveal">
-            <h3>International students</h3>
-            <p>People who want Silicon Valley–style business exposure and practice.</p>
+            <h3 data-i18n="who_4_t">International students</h3>
+            <p data-i18n="who_4_p">People who want Silicon Valley–style business exposure and practice.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= WHY DIFFERENT ================= -->
+    <!-- ================= WHY ================= -->
     <section class="section section--alt" id="why">
       <div class="container why__grid">
         <div class="section__head section__head--left reveal">
-          <span class="eyebrow">Why this is different</span>
-          <h2 class="section__title">Not a generic AI course.</h2>
-          <p class="section__lead">ONPECY is built to produce operators, not certificates.</p>
+          <span class="eyebrow" data-i18n="why_eyebrow">Why this is different</span>
+          <h2 class="section__title" data-i18n="why_title">Not a generic AI course.</h2>
+          <p class="section__lead" data-i18n="why_lead">ONPECY is built to produce operators, not certificates.</p>
         </div>
         <ul class="reasons reveal">
-          <li>Application-based admission, not open enrollment.</li>
-          <li>Built around real business platforms, not hypotheticals.</li>
-          <li>Focused on workflow execution, not only lectures.</li>
-          <li>Students build practical AI agent systems.</li>
-          <li>Business-model focused, not certificate focused.</li>
+          <li data-i18n="why_1">Application-based admission, not open enrollment.</li>
+          <li data-i18n="why_2">Built around real business platforms, not hypotheticals.</li>
+          <li data-i18n="why_3">Focused on workflow execution, not only lectures.</li>
+          <li data-i18n="why_4">Students build practical AI agent systems.</li>
+          <li data-i18n="why_5">Business-model focused, not certificate focused.</li>
         </ul>
       </div>
     </section>
@@ -337,8 +379,8 @@
     <section class="section" id="ecosystem">
       <div class="container">
         <div class="section__head reveal">
-          <h2 class="section__title">Ecosystem &amp; <span class="grad">platforms.</span></h2>
-          <p class="section__lead">Platforms and organizations connected to our training environment and the standards students learn.</p>
+          <h2 class="section__title"><span data-i18n="eco_t1">Ecosystem &amp; </span><span class="grad" data-i18n="eco_t2">platforms.</span></h2>
+          <p class="section__lead" data-i18n="eco_lead">Platforms and organizations connected to our training environment and the standards students learn.</p>
         </div>
         <div class="logos reveal">
           <div class="logo" title="University of San Jose"><img src="images/opt/usj.png" alt="University of San Jose (USJ)" loading="lazy" /></div>
@@ -349,7 +391,7 @@
           <div class="logo logo--text"><span>SSI</span></div>
           <div class="logo logo--text"><span>Microsoft AI</span></div>
         </div>
-        <p class="disclaimer">Logos and trademarks are the property of their respective owners. Their appearance references training standards and tools students work with and does not, by itself, imply sponsorship or endorsement.</p>
+        <p class="disclaimer" data-i18n="eco_disc">Logos and trademarks are the property of their respective owners. Their appearance references training standards and tools students work with and does not, by itself, imply sponsorship or endorsement.</p>
       </div>
     </section>
 
@@ -357,51 +399,51 @@
     <section class="section section--alt" id="faq">
       <div class="container container--narrow">
         <div class="section__head reveal">
-          <h2 class="section__title">Questions, <span class="grad">answered.</span></h2>
+          <h2 class="section__title"><span data-i18n="faq_t1">Questions, </span><span class="grad" data-i18n="faq_t2">answered.</span></h2>
         </div>
         <div class="faq reveal">
           <details class="faq__item">
-            <summary>Is ONPECY a course or an incubator?</summary>
-            <p>An incubator. Lessons exist, but the goal is a working business system — AI agents, workflows, and a One Person Company model — not a certificate.</p>
+            <summary data-i18n="faq_q1">Is ONPECY a course or an incubator?</summary>
+            <p data-i18n="faq_a1">An incubator. Lessons exist, but the goal is a working business system — AI agents, workflows, and a One Person Company model — not a certificate.</p>
           </details>
           <details class="faq__item">
-            <summary>Do students need coding experience?</summary>
-            <p>No. Students build with AI tools, automation platforms, and no-code/low-code workflows. The focus is operating systems, not writing everything by hand.</p>
+            <summary data-i18n="faq_q2">Do students need coding experience?</summary>
+            <p data-i18n="faq_a2">No. Students build with AI tools, automation platforms, and no-code/low-code workflows. The focus is operating systems, not writing everything by hand.</p>
           </details>
           <details class="faq__item">
-            <summary>Is revenue guaranteed?</summary>
-            <p>No. ONPECY teaches how revenue models work and how to build them. Actual income depends on execution, customer acquisition, market conditions, and business performance.</p>
+            <summary data-i18n="faq_q3">Is revenue guaranteed?</summary>
+            <p data-i18n="faq_a3">No. ONPECY teaches how revenue models work and how to build them. Actual income depends on execution, customer acquisition, market conditions, and business performance.</p>
           </details>
           <details class="faq__item">
-            <summary>What platforms do students work with?</summary>
-            <p>Workflows connected to ALLCPR, USJ, SVIHT, and SSI, using a stack that includes ChatGPT, Claude, Gemini, Cursor, automation tools, and CRM / knowledge-base systems.</p>
+            <summary data-i18n="faq_q4">What platforms do students work with?</summary>
+            <p data-i18n="faq_a4">Workflows connected to ALLCPR, USJ, SVIHT, and SSI, using a stack that includes ChatGPT, Claude, Gemini, Cursor, automation tools, and CRM / knowledge-base systems.</p>
           </details>
           <details class="faq__item">
-            <summary>Who reviews student work?</summary>
-            <p>Work is built inside real workflows and reviewed against how the connected platforms actually operate, so feedback is practical rather than theoretical.</p>
+            <summary data-i18n="faq_q5">Who reviews student work?</summary>
+            <p data-i18n="faq_a5">Work is built inside real workflows and reviewed against how the connected platforms actually operate, so feedback is practical rather than theoretical.</p>
           </details>
           <details class="faq__item">
-            <summary>How do I apply?</summary>
-            <p>Admission is application-based. Use the Apply button to start; qualified applicants are invited to continue the process.</p>
+            <summary data-i18n="faq_q6">How do I apply?</summary>
+            <p data-i18n="faq_a6">Admission is application-based. Use the Apply button to start; qualified applicants are invited to continue the process.</p>
           </details>
         </div>
       </div>
     </section>
 
     <!-- ================= FINAL CTA ================= -->
-    <section class="vision" id="apply">
+    <section class="vision" id="start">
       <div class="vision__glow" aria-hidden="true"></div>
       <div class="container vision__inner reveal">
-        <h2 class="vision__title">Build something <span class="grad">real.</span></h2>
-        <p class="vision__copy">ONPECY helps students turn AI skills into workflows, workflows into services, and services into a One Person Company — with an AI team instead of a payroll.</p>
+        <h2 class="vision__title"><span data-i18n="cta_t1">Build something </span><span class="grad" data-i18n="cta_t2">real.</span></h2>
+        <p class="vision__copy" data-i18n="cta_copy">ONPECY helps students turn AI skills into workflows, workflows into services, and services into a One Person Company — with an AI team instead of a payroll.</p>
         <p class="vision__slogan">
-          One Person.<br />
-          One AI Team.<br />
-          <span class="grad">One Business.</span>
+          <span data-i18n="cta_s1">One Person.</span><br />
+          <span data-i18n="cta_s2">One AI Team.</span><br />
+          <span class="grad" data-i18n="cta_s3">One Business.</span>
         </p>
         <div class="hero__cta hero__cta--center">
-          <a href="#apply" class="btn btn--primary">Apply Now</a>
-          <a href="#how" class="btn btn--ghost">See How It Works</a>
+          <a href="apply.html" class="btn btn--primary" data-i18n="cta_apply">Apply Now</a>
+          <a href="#how" class="btn btn--ghost" data-i18n="cta_seehow">See How It Works</a>
         </div>
       </div>
     </section>
@@ -411,26 +453,23 @@
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__brand">
-        <span class="footer__brandrow">
-          <img class="brand__mark" src="images/onpecy-mark.png" alt="" width="30" height="30" />
-          <span class="brand__name">ONPECY</span>
-        </span>
-        <p class="footer__tag">The AI-powered One Person Company incubator.</p>
+        <img class="footer__logo" src="images/onpecy-lockup.png" alt="ONPECY — AI-Powered One Person Company Incubator" width="300" />
       </div>
       <nav class="footer__nav" aria-label="Footer">
-        <a href="#platforms">Platforms</a>
-        <a href="#how">How it works</a>
-        <a href="#tracks">Tracks</a>
-        <a href="models.html">Models</a>
-        <a href="#faq">FAQ</a>
-        <a href="#apply">Apply</a>
+        <a href="#platforms" data-i18n="nav_platforms">Platforms</a>
+        <a href="#how" data-i18n="nav_how">How it works</a>
+        <a href="#tracks" data-i18n="nav_tracks">Tracks</a>
+        <a href="models.html" data-i18n="nav_models">Models</a>
+        <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        <a href="apply.html" data-i18n="cta_apply">Apply Now</a>
       </nav>
     </div>
     <div class="container footer__legal">
-      <p>© 2026 ONPECY — AI-Powered One Person Company Incubator. Revenue is not guaranteed and depends on execution and market conditions.</p>
+      <p data-i18n="footer_legal">© 2026 ONPECY — AI-Powered One Person Company Incubator. Revenue is not guaranteed and depends on execution and market conditions.</p>
     </div>
   </footer>
 
-  <script src="app.js?v=2"></script>
+  <script src="i18n.js?v=1"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

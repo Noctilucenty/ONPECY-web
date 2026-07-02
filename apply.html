@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070B18" />
+  <link rel="icon" type="image/png" href="images/favicon.png" />
+  <title>Apply — ONPECY</title>
+  <meta name="description" content="Apply to ONPECY, the application-based AI-powered One Person Company incubator." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="index.html" class="brand" aria-label="ONPECY home">
+        <img class="brand__mark" src="images/onpecy-icon.png" alt="" width="30" height="30" />
+        <span class="brand__name">ONPECY</span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html#platforms" data-i18n="nav_platforms">Platforms</a>
+        <a href="index.html#how" data-i18n="nav_how">How it works</a>
+        <a href="index.html#tracks" data-i18n="nav_tracks">Tracks</a>
+        <a href="models.html" data-i18n="nav_models">Models</a>
+        <a href="index.html#faq" data-i18n="nav_faq">FAQ</a>
+      </nav>
+      <div class="nav__actions">
+        <button class="langtoggle" id="langToggle" type="button" aria-label="Switch language">中文</button>
+        <a href="apply.html" class="btn btn--primary btn--sm" aria-current="page" data-i18n="cta_apply">Apply Now</a>
+      </div>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile" id="navMobile">
+      <a href="index.html#platforms" data-i18n="nav_platforms">Platforms</a>
+      <a href="index.html#how" data-i18n="nav_how">How it works</a>
+      <a href="index.html#tracks" data-i18n="nav_tracks">Tracks</a>
+      <a href="models.html" data-i18n="nav_models">Models</a>
+      <a href="index.html#faq" data-i18n="nav_faq">FAQ</a>
+      <button class="langtoggle langtoggle--block" id="langToggleMobile" type="button">中文</button>
+    </div>
+  </header>
+
+  <main class="apply">
+    <div class="apply__glow" aria-hidden="true"></div>
+    <div class="container apply__grid">
+      <!-- left: reassurance -->
+      <aside class="apply__aside reveal">
+        <a href="index.html" class="backlink" data-i18n="apply_back">← Back to home</a>
+        <span class="eyebrow" data-i18n="apply_eyebrow">Application-based admission</span>
+        <h1 class="apply__title" data-i18n="apply_title">Apply to ONPECY.</h1>
+        <p class="apply__lead" data-i18n="apply_lead">Tell us a little about you. Qualified applicants are invited to continue the process.</p>
+        <ul class="apply__points">
+          <li>
+            <span class="apply__pnum" aria-hidden="true"><svg class="num-ico" viewBox="0 0 24 24"><path d="M10 9 L13 6.8 V18 M9.6 18 H16" /></svg></span>
+            <div><h3 data-i18n="apply_p1_t">What happens next</h3><p data-i18n="apply_p1_d">We review your application and email qualified applicants with the next steps.</p></div>
+          </li>
+          <li>
+            <span class="apply__pnum" aria-hidden="true"><svg class="num-ico" viewBox="0 0 24 24"><path d="M8.6 9.6a3.5 3.5 0 1 1 6 2.6L8.6 18H15.6" /></svg></span>
+            <div><h3 data-i18n="apply_p2_t">What you need</h3><p data-i18n="apply_p2_d">No coding experience required — just a serious, honest application.</p></div>
+          </li>
+          <li>
+            <span class="apply__pnum" aria-hidden="true"><svg class="num-ico" viewBox="0 0 24 24"><path d="M9 8a3.2 3.2 0 1 1 2.6 5a3.3 3.3 0 1 1 -2.6 5" /></svg></span>
+            <div><h3 data-i18n="apply_p3_t">What you'll build</h3><p data-i18n="apply_p3_d">Real AI workflows, agents, and a One Person Company business model.</p></div>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- right: form -->
+      <div class="apply__formwrap reveal">
+        <form class="form" id="applyForm" novalidate>
+          <div class="field">
+            <label for="f_name"><span data-i18n="f_name">Full name</span> <em class="req" data-i18n="f_required">required</em></label>
+            <input id="f_name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field field--half">
+            <div>
+              <label for="f_email"><span data-i18n="f_email">Email</span> <em class="req" data-i18n="f_required">required</em></label>
+              <input id="f_email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div>
+              <label for="f_phone" data-i18n="f_phone">Phone (optional)</label>
+              <input id="f_phone" name="phone" type="tel" autocomplete="tel" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="f_country" data-i18n="f_country">Country / City</label>
+            <input id="f_country" name="location" type="text" autocomplete="country-name" />
+          </div>
+          <div class="field">
+            <label for="f_track" data-i18n="f_track">Track you're interested in</label>
+            <select id="f_track" name="track">
+              <option value="" data-i18n="f_track_ph">Choose a track…</option>
+              <option value="ALLCPR OPC">ALLCPR OPC — Community Safety</option>
+              <option value="USJ OPC">USJ OPC — AI Education</option>
+              <option value="SVIHT OPC">SVIHT OPC — AI HealthTech</option>
+              <option value="SSI OPC">SSI OPC — AI Social Safety</option>
+              <option value="Not sure" data-i18n="f_track_unsure">Not sure yet</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f_bg" data-i18n="f_bg">Your background</label>
+            <textarea id="f_bg" name="background" rows="3" data-i18n-ph="f_bg_ph" placeholder="A sentence or two about your study or work background."></textarea>
+          </div>
+          <div class="field">
+            <label for="f_why" data-i18n="f_why">Why do you want to join ONPECY?</label>
+            <textarea id="f_why" name="motivation" rows="3" data-i18n-ph="f_why_ph" placeholder="What do you want to build?"></textarea>
+          </div>
+          <label class="consent">
+            <input id="f_consent" name="consent" type="checkbox" required />
+            <span data-i18n="f_consent">I agree to be contacted by ONPECY about my application.</span>
+          </label>
+          <button type="submit" class="btn btn--primary btn--full" id="submitBtn" data-i18n="f_submit">Submit application</button>
+          <p class="form__msg" id="formMsg" role="status" aria-live="polite"></p>
+        </form>
+
+        <!-- success state -->
+        <div class="form__done" id="formDone" hidden>
+          <div class="form__check" aria-hidden="true">✓</div>
+          <h2 data-i18n="f_ok_t">Application received.</h2>
+          <p data-i18n="f_ok_d">Thank you. If your application is a fit, we'll reach out by email.</p>
+          <a href="index.html" class="btn btn--ghost" data-i18n="apply_back">← Back to home</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <img class="footer__logo" src="images/onpecy-lockup.png" alt="ONPECY — AI-Powered One Person Company Incubator" width="300" />
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="index.html#platforms" data-i18n="nav_platforms">Platforms</a>
+        <a href="index.html#how" data-i18n="nav_how">How it works</a>
+        <a href="models.html" data-i18n="nav_models">Models</a>
+        <a href="index.html#faq" data-i18n="nav_faq">FAQ</a>
+      </nav>
+    </div>
+    <div class="container footer__legal">
+      <p data-i18n="footer_legal">© 2026 ONPECY — AI-Powered One Person Company Incubator. Revenue is not guaranteed and depends on execution and market conditions.</p>
+    </div>
+  </footer>
+
+  <script src="i18n.js?v=1"></script>
+  <script src="app.js?v=3"></script>
+  <script>
+  /* ============================================================
+     APPLY FORM — submission handling
+     ------------------------------------------------------------
+     To receive applications, set ONE of the following:
+
+     1) A form backend endpoint (Formspree, Getform, Basin, your API):
+        set FORM_ENDPOINT to your POST URL. The form sends JSON.
+        e.g. FORM_ENDPOINT = "https://formspree.io/f/xxxxxxx";
+
+     2) Leave FORM_ENDPOINT empty to use the email fallback:
+        the visitor's email app opens a pre-filled message to CONTACT_EMAIL.
+
+     Update CONTACT_EMAIL to your real inbox either way.
+     ============================================================ */
+  (function () {
+    'use strict';
+    var FORM_ENDPOINT = "";                       // <-- paste your Formspree/Getform URL here
+    var CONTACT_EMAIL = "admissions@onpecy.com";  // <-- set your real inbox
+
+    var form = document.getElementById('applyForm');
+    var msg = document.getElementById('formMsg');
+    var done = document.getElementById('formDone');
+    var btn = document.getElementById('submitBtn');
+    if (!form) return;
+
+    function t(key, fallback) {
+      var v = window.ONPECY_T && window.ONPECY_T(key);
+      return v != null ? v : fallback;
+    }
+
+    function collect() {
+      var d = {};
+      new FormData(form).forEach(function (v, k) { d[k] = v; });
+      d.consent = form.consent.checked ? 'yes' : 'no';
+      return d;
+    }
+
+    function showDone() {
+      form.hidden = true;
+      done.hidden = false;
+      done.scrollIntoView({ block: 'center' });
+    }
+
+    function mailtoFallback(d) {
+      var subject = 'ONPECY application — ' + (d.name || '');
+      var lines = [
+        'Name: ' + (d.name || ''),
+        'Email: ' + (d.email || ''),
+        'Phone: ' + (d.phone || ''),
+        'Location: ' + (d.location || ''),
+        'Track: ' + (d.track || ''),
+        '',
+        'Background:',
+        (d.background || ''),
+        '',
+        'Motivation:',
+        (d.motivation || ''),
+        '',
+        'Consent: ' + (d.consent || 'no')
+      ];
+      var url = 'mailto:' + CONTACT_EMAIL +
+        '?subject=' + encodeURIComponent(subject) +
+        '&body=' + encodeURIComponent(lines.join('\n'));
+      window.location.href = url;
+    }
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      msg.textContent = '';
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      var data = collect();
+      btn.disabled = true;
+      var busy = t('f_sending', 'Sending…');
+      btn.setAttribute('data-label', btn.textContent);
+      btn.textContent = busy;
+
+      if (!FORM_ENDPOINT) {
+        // email fallback — open mail client, then show success state
+        mailtoFallback(data);
+        setTimeout(function () { btn.disabled = false; btn.textContent = btn.getAttribute('data-label'); showDone(); }, 400);
+        return;
+      }
+
+      fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      }).then(function (r) {
+        if (r.ok) { showDone(); }
+        else { throw new Error('bad status'); }
+      }).catch(function () {
+        msg.textContent = t('f_err', 'Something went wrong. Please try again, or email us directly.');
+        btn.disabled = false;
+        btn.textContent = btn.getAttribute('data-label');
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
