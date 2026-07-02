@@ -91,11 +91,11 @@ body {
 /* ============================================================
    NAV
    ============================================================ */
-.nav { position: fixed; top: 16px; left: 0; right: 0; z-index: 100; }
+.nav { position: fixed; top: 16px; left: 0; right: 0; z-index: 100; padding: 0 20px; }
 .nav__inner {
   max-width: var(--maxw); margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between; gap: 20px;
-  padding: 12px 20px; margin-left: 20px; margin-right: 20px;
+  padding: 12px 20px;
   border: 1px solid var(--border);
   background: rgba(9, 14, 31, 0.6);
   backdrop-filter: blur(18px) saturate(160%);
@@ -386,7 +386,7 @@ body {
   .section { padding: 78px 0; }
   .nav__links, .nav__actions { display: none; }
   .nav__toggle { display: flex; }
-  .nav__inner { margin-left: 14px; margin-right: 14px; }
+  .nav { padding: 0 14px; }
   .nav__mobile {
     display: none; flex-direction: column; gap: 6px;
     margin: 10px 14px 0; padding: 16px;
