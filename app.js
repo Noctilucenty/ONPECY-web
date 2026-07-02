@@ -72,19 +72,42 @@
     window.addEventListener('hashchange', activateFromHash);
   }
 
-  /* ---- scroll reveal ---- */
-  var reveals = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
+  /* ---- scroll reveal + stagger (IntersectionObserver, no libraries) ---- */
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var revealSel = '.reveal, .reveal-up, .reveal-scale, .stagger, .timeline-step';
+  var reveals = Array.prototype.slice.call(document.querySelectorAll(revealSel));
+
+  function show(el) { el.classList.add('in'); el.classList.add('is-visible'); }
+
+  function isReveal(node) {
+    return node.classList && (node.classList.contains('reveal') ||
+      node.classList.contains('reveal-up') || node.classList.contains('reveal-scale') ||
+      node.classList.contains('timeline-step'));
+  }
+
+  var vh = window.innerHeight || document.documentElement.clientHeight;
+  if (reduce || !('IntersectionObserver' in window) || !vh) {
+    /* reduced motion, no observer support, or no measurable viewport:
+       reveal everything so content is never stuck hidden */
+    reveals.forEach(show);
+  } else {
+    /* cascade: reveal siblings in the same parent get an incremental delay,
+       so grids and card rows animate in as a stagger without extra markup */
+    reveals.forEach(function (el) {
+      var parent = el.parentNode;
+      if (!parent) return;
+      var sibs = Array.prototype.filter.call(parent.children, isReveal);
+      var idx = sibs.indexOf(el);
+      if (idx > 0) el.style.transitionDelay = Math.min(idx * 70, 350) + 'ms';
+    });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
-          entry.target.classList.add('in');
+          show(entry.target);
           io.unobserve(entry.target);
         }
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(function (el) { io.observe(el); });
-  } else {
-    reveals.forEach(function (el) { el.classList.add('in'); });
   }
 })();

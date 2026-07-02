@@ -13,9 +13,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
+  <!-- ================= AMBIENT BACKGROUND (slow drifting orbs) ================= -->
+  <div class="ambient" aria-hidden="true">
+    <span class="ambient-orb ambient-orb--blue"></span>
+    <span class="ambient-orb ambient-orb--violet"></span>
+  </div>
+
   <!-- ================= SVG ICON SPRITE ================= -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <defs>
@@ -61,6 +67,9 @@
     <symbol id="ic-search" viewBox="0 0 24 24">
       <circle cx="11" cy="11" r="6.2" /><path d="M20 20l-4.4-4.4" />
     </symbol>
+    <symbol id="ic-check" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.6" /><path d="M8.3 12.3l2.6 2.6 4.8-5.2" />
+    </symbol>
   </svg>
 
   <!-- ================= NAV ================= -->
@@ -102,37 +111,62 @@
     <section class="hero" id="hero">
       <div class="hero__glow" aria-hidden="true"></div>
       <div class="container hero__grid">
-        <div class="hero__copy reveal">
-          <span class="eyebrow" data-i18n="hero_eyebrow">Application-based AI business incubator · Silicon Valley</span>
-          <h1 class="hero__title"><span data-i18n="hero_t1">Build Your </span><span class="grad" data-i18n="hero_t2">AI-Powered</span><span data-i18n="hero_t3"> One Person Company.</span></h1>
-          <p class="hero__sub" data-i18n="hero_sub">Most AI courses stay theoretical. ONPECY is an application-based incubator where students build real AI systems — agents, workflows, and business models — inside real operating platforms in education, safety, health, and automation.</p>
+        <div class="hero__copy hero-seq">
+          <div class="hero__brand">
+            <img class="hero__brand-mark" src="images/onpecy-icon.png" alt="" width="36" height="36" />
+            <span class="hero__brand-name">ONPECY</span>
+            <span class="hero__brand-tag" data-i18n="brand_tagline">AI-Powered One Person Company Incubator</span>
+          </div>
+          <h1 class="hero__title"><span data-i18n="hero_t1">Build Your </span><span class="grad" data-i18n="hero_t2">AI-Powered</span><br /><span data-i18n="hero_t3">One Person Company.</span></h1>
+          <p class="hero__sub" data-i18n="hero_sub">ONPECY is an application-based AI business incubator where students build agent workflows for real operating platforms in education, safety, health, and automation.</p>
+          <p class="hero__sub2" data-i18n="hero_sub2">The goal is not just to learn AI — it is to build a repeatable One Person Company system.</p>
           <div class="hero__cta">
             <a href="apply.html" class="btn btn--primary" data-i18n="cta_apply">Apply Now</a>
-            <a href="#build" class="btn btn--ghost" data-i18n="cta_seebuild">See what students build</a>
+            <a href="#build" class="btn btn--ghost" data-i18n="cta_seebuild">See What Students Build</a>
           </div>
+
+          <div class="admitcard">
+            <span class="admitcard__ico" aria-hidden="true"><svg class="ico"><use href="#ic-check" /></svg></span>
+            <div>
+              <span class="admitcard__t" data-i18n="hero_admit_t">Application-based program</span>
+              <span class="admitcard__p" data-i18n="hero_admit_p">Students apply, get reviewed, and are matched to an OPC track.</span>
+            </div>
+          </div>
+
+          <div class="hero__proof">
+            <span class="hero__proof-label" data-i18n="hero_proof_label">Built with real platform cases</span>
+            <div class="hero__proof-names"><span>ALLCPR</span><span>USJ</span><span>SVIHT</span><span>SSI</span></div>
+          </div>
+
           <ul class="trustchips" aria-label="What ONPECY offers">
-            <li data-i18n="chip_platforms">Real platforms</li>
-            <li data-i18n="chip_workflows">AI workflows</li>
-            <li data-i18n="chip_incubation">Business incubation</li>
+            <li data-i18n="chip_agentflows">AI agent workflows</li>
+            <li data-i18n="chip_admission">Application-based admission</li>
+            <li data-i18n="chip_incubation">Business model incubation</li>
             <li data-i18n="chip_ecosystem">Silicon Valley ecosystem</li>
           </ul>
         </div>
 
-        <div class="flow reveal" aria-label="From you to your company" role="img">
-          <div class="flow__node flow__node--you">
+        <div class="flow flow-anim" aria-label="From you to your OPC" role="img">
+          <div class="flow__node flow__node--you flow-card">
             <span class="flow__tag" data-i18n="flow_start">Start</span>
             <span class="flow__label" data-i18n="flow_you">You</span>
           </div>
-          <div class="flow__line"></div>
-          <div class="flow__node"><span class="flow__ico"><svg class="ico"><use href="#ic-robot" /></svg></span><span class="flow__label" data-i18n="flow_aiteam">AI Team</span></div>
-          <div class="flow__line"></div>
-          <div class="flow__node"><span class="flow__ico"><svg class="ico"><use href="#ic-flow" /></svg></span><span class="flow__label" data-i18n="flow_workflow">Workflow</span></div>
-          <div class="flow__line"></div>
-          <div class="flow__node"><span class="flow__ico"><svg class="ico"><use href="#ic-gear" /></svg></span><span class="flow__label" data-i18n="flow_automation">Automation</span></div>
-          <div class="flow__line"></div>
-          <div class="flow__node flow__node--company">
+          <div class="flow__line flow-line"></div>
+          <div class="flow__node flow__node--team flow-card">
+            <span class="flow__ico"><svg class="ico"><use href="#ic-robot" /></svg></span>
+            <span class="flow__label" data-i18n="flow_aiteam">AI Agent Team</span>
+            <div class="flow__agents">
+              <span data-i18n="ag_marketing">Marketing</span><span data-i18n="ag_sales">Sales</span><span data-i18n="ag_customer">Customer</span><span data-i18n="ag_knowledge">Knowledge</span><span data-i18n="ag_operations">Operations</span>
+            </div>
+          </div>
+          <div class="flow__line flow-line"></div>
+          <div class="flow__node flow-card"><span class="flow__ico"><svg class="ico"><use href="#ic-flow" /></svg></span><span class="flow__label" data-i18n="flow_workflow">Real Platform Workflow</span></div>
+          <div class="flow__line flow-line"></div>
+          <div class="flow__node flow-card"><span class="flow__ico"><svg class="ico"><use href="#ic-gear" /></svg></span><span class="flow__label" data-i18n="flow_automation">Automation System</span></div>
+          <div class="flow__line flow-line"></div>
+          <div class="flow__node flow__node--company flow-card">
             <span class="flow__tag" data-i18n="flow_outcome">Outcome</span>
-            <span class="flow__label" data-i18n="flow_company">Your Company</span>
+            <span class="flow__label" data-i18n="flow_company">Your OPC</span>
           </div>
         </div>
       </div>
@@ -555,7 +589,7 @@
         </p>
         <div class="hero__cta hero__cta--center">
           <a href="apply.html" class="btn btn--primary" data-i18n="cta_apply">Apply Now</a>
-          <a href="#build" class="btn btn--ghost" data-i18n="cta_seebuild">See what students build</a>
+          <a href="#build" class="btn btn--ghost" data-i18n="cta_seebuild">See What Students Build</a>
         </div>
       </div>
     </section>
@@ -563,7 +597,7 @@
 
   <!-- ================= FOOTER ================= -->
   <footer class="footer">
-    <div class="container footer__inner">
+    <div class="container footer__inner reveal">
       <div class="footer__brand">
         <img class="footer__logo" src="images/onpecy-lockup.png" alt="ONPECY — AI-Powered One Person Company Incubator" width="300" />
       </div>
@@ -581,7 +615,7 @@
     </div>
   </footer>
 
-  <script src="i18n.js?v=2"></script>
-  <script src="app.js?v=3"></script>
+  <script src="i18n.js?v=3"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=6" />
 </head>
 <body>
   <header class="nav" id="nav">
@@ -130,7 +130,7 @@
 
   <footer class="footer">
     <div class="container footer__inner">
-      <div class="footer__brand">
+      <div class="footer__brand reveal">
         <img class="footer__logo" src="images/onpecy-lockup.png" alt="ONPECY — AI-Powered One Person Company Incubator" width="300" />
       </div>
       <nav class="footer__nav" aria-label="Footer">
@@ -146,7 +146,7 @@
   </footer>
 
   <script src="i18n.js?v=1"></script>
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=4"></script>
   <script>
   /* ============================================================
      APPLY FORM — submission handling
@@ -220,14 +220,21 @@
       if (!form.checkValidity()) { form.reportValidity(); return; }
       var data = collect();
       btn.disabled = true;
+      btn.classList.add('is-loading');
       var busy = t('f_sending', 'Sending…');
       btn.setAttribute('data-label', btn.textContent);
       btn.textContent = busy;
 
+      function resetBtn() {
+        btn.disabled = false;
+        btn.classList.remove('is-loading');
+        btn.textContent = btn.getAttribute('data-label');
+      }
+
       if (!FORM_ENDPOINT) {
         // email fallback — open mail client, then show success state
         mailtoFallback(data);
-        setTimeout(function () { btn.disabled = false; btn.textContent = btn.getAttribute('data-label'); showDone(); }, 400);
+        setTimeout(function () { resetBtn(); showDone(); }, 400);
         return;
       }
 
@@ -240,8 +247,7 @@
         else { throw new Error('bad status'); }
       }).catch(function () {
         msg.textContent = t('f_err', 'Something went wrong. Please try again, or email us directly.');
-        btn.disabled = false;
-        btn.textContent = btn.getAttribute('data-label');
+        resetBtn();
       });
     });
   })();

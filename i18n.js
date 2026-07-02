@@ -10,10 +10,15 @@
     cta_apply: '立即申请', cta_seehow: '了解运作方式', cta_seebuild: '查看学生的成果',
     // hero
     hero_eyebrow: '申请制 AI 商业孵化器 · 硅谷',
+    brand_tagline: 'AI 驱动的一人公司孵化器',
     hero_t1: '打造你的 ', hero_t2: 'AI 驱动', hero_t3: '一人公司。',
-    hero_sub: 'AI 课程大多停留在理论。ONPECY 是一所申请制孵化器 —— 学生在真实的运营平台上搭建可用的 AI 系统：智能体、工作流与商业模型，覆盖教育、安全、健康与自动化。',
-    chip_platforms: '真实平台', chip_workflows: 'AI 工作流', chip_incubation: '商业孵化', chip_ecosystem: '硅谷生态',
-    flow_start: '起点', flow_you: '你', flow_aiteam: 'AI 团队', flow_workflow: '工作流', flow_automation: '自动化', flow_outcome: '成果', flow_company: '你的公司',
+    hero_sub: 'ONPECY 是一所申请制 AI 商业孵化器 —— 学生为真实的运营平台搭建智能体工作流，覆盖教育、安全、健康与自动化。',
+    hero_sub2: '目标不只是学会 AI，而是搭建一套可复制的一人公司系统。',
+    hero_admit_t: '申请制项目', hero_admit_p: '学生申请、经过审核，并被匹配到一个 OPC 方向。',
+    hero_proof_label: '基于真实平台案例构建',
+    chip_agentflows: 'AI 智能体工作流', chip_admission: '申请制录取', chip_incubation: '商业模型孵化', chip_ecosystem: '硅谷生态',
+    flow_start: '起点', flow_you: '你', flow_aiteam: 'AI 智能体团队', flow_workflow: '真实平台工作流', flow_automation: '自动化系统', flow_outcome: '成果', flow_company: '你的 OPC',
+    ag_marketing: '营销', ag_sales: '销售', ag_customer: '客服', ag_knowledge: '知识', ag_operations: '运营',
     // proof
     proof_eyebrow: '真实性证明',
     proof_t1: '围绕', proof_t2: '真实运营平台构建。',

@@ -162,6 +162,47 @@ body {
 .flow__tag { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cyan); font-weight: 600; }
 .flow__line { width: 2px; height: 22px; background: linear-gradient(180deg, var(--cyan), rgba(139, 92, 246, 0.2)); opacity: 0.7; }
 
+/* hero flow: AI Agent Team sub-labels */
+.flow__node--team { max-width: 320px; gap: 6px; }
+.flow__agents { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 6px; }
+.flow__agents span {
+  font-size: 11px; font-weight: 600; color: var(--muted);
+  padding: 3px 9px; border-radius: 999px;
+  border: 1px solid var(--border); background: rgba(255, 255, 255, 0.03);
+}
+
+/* ============================================================
+   HERO — brand lockup, admission card, proof row
+   ============================================================ */
+.hero__brand { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 26px; }
+.hero__brand-mark { width: 34px; height: 34px; object-fit: contain; filter: drop-shadow(0 0 12px rgba(103, 232, 249, 0.4)); }
+.hero__brand-name { font-size: 20px; font-weight: 800; letter-spacing: 0.02em; }
+.hero__brand-tag { font-size: 12.5px; font-weight: 600; color: var(--muted); padding-left: 12px; border-left: 1px solid var(--border-strong); letter-spacing: 0.01em; }
+
+.hero__sub2 { margin-top: 12px; font-size: 15.5px; color: var(--text); font-weight: 500; max-width: 520px; }
+
+.admitcard {
+  display: flex; align-items: center; gap: 14px; margin-top: 28px;
+  max-width: 480px; padding: 14px 18px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: linear-gradient(120deg, rgba(59, 130, 246, 0.10), rgba(139, 92, 246, 0.08));
+  box-shadow: 0 0 0 1px rgba(103, 232, 249, 0.12);
+}
+.admitcard__ico { flex: none; width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: rgba(103, 232, 249, 0.12); border: 1px solid rgba(103, 232, 249, 0.3); }
+.admitcard__ico .ico { width: 22px; height: 22px; }
+.admitcard__t { display: block; font-size: 14px; font-weight: 700; letter-spacing: -0.01em; }
+.admitcard__p { display: block; margin-top: 2px; font-size: 13px; color: var(--muted); }
+
+.hero__proof { margin-top: 28px; }
+.hero__proof-label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; margin-bottom: 10px; }
+.hero__proof-names { display: flex; flex-wrap: wrap; gap: 8px; }
+.hero__proof-names span {
+  font-size: 13px; font-weight: 800; letter-spacing: 0.02em; color: var(--text);
+  padding: 6px 14px; border-radius: 999px;
+  border: 1px solid rgba(103, 232, 249, 0.28);
+  background: linear-gradient(120deg, rgba(59, 130, 246, 0.12), rgba(139, 92, 246, 0.10));
+}
+
 /* ============================================================
    COMPARE
    ============================================================ */
@@ -762,4 +803,247 @@ body {
 }
 @media (max-width: 560px) {
   .process { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   v5 — PREMIUM MOTION SYSTEM
+   Principle: animate proof and process, not decoration.
+   ------------------------------------------------------------
+   Reusable primitives, then section-specific polish.
+   Motion is opacity/transform only (never width/height).
+   ============================================================ */
+
+/* ---------- reveal primitives ----------
+   .reveal (legacy) already exists above and reveals on .in.
+   These add .is-visible so JS can toggle one class everywhere. */
+.reveal.is-visible { opacity: 1; transform: none; }
+
+.reveal-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal-up.is-visible { opacity: 1; transform: none; }
+
+.reveal-scale { opacity: 0; transform: scale(0.96); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal-scale.is-visible { opacity: 1; transform: none; }
+
+.timeline-step { opacity: 0; transform: translateY(20px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.timeline-step.is-visible { opacity: 1; transform: none; }
+
+/* stagger: children cascade once the container is visible */
+.stagger-item { opacity: 0; transform: translateY(18px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.stagger.is-visible .stagger-item { opacity: 1; transform: none; }
+.stagger.is-visible .stagger-item:nth-child(1) { transition-delay: 0.04s; }
+.stagger.is-visible .stagger-item:nth-child(2) { transition-delay: 0.12s; }
+.stagger.is-visible .stagger-item:nth-child(3) { transition-delay: 0.20s; }
+.stagger.is-visible .stagger-item:nth-child(4) { transition-delay: 0.28s; }
+.stagger.is-visible .stagger-item:nth-child(5) { transition-delay: 0.36s; }
+.stagger.is-visible .stagger-item:nth-child(n+6) { transition-delay: 0.44s; }
+
+/* generic utilities */
+.hover-lift { transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.hover-lift:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.glow-border { transition: box-shadow 0.3s var(--ease), border-color 0.3s var(--ease); }
+.glow-border:hover { border-color: var(--border-strong); box-shadow: 0 0 0 1px rgba(103, 232, 249, 0.2), var(--shadow); }
+
+/* ---------- ambient background: slow drifting orbs ---------- */
+.ambient { position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.ambient-orb { position: absolute; border-radius: 50%; filter: blur(60px); will-change: transform; }
+.ambient-orb--blue {
+  width: 520px; height: 520px; top: -10%; left: -8%;
+  background: radial-gradient(circle at center, rgba(59, 130, 246, 0.30), transparent 68%);
+  animation: orbDriftA 36s ease-in-out infinite alternate;
+}
+.ambient-orb--violet {
+  width: 560px; height: 560px; bottom: -14%; right: -10%;
+  background: radial-gradient(circle at center, rgba(139, 92, 246, 0.26), transparent 68%);
+  animation: orbDriftB 44s ease-in-out infinite alternate;
+}
+@keyframes orbDriftA { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(6%, 4%, 0) scale(1.12); } }
+@keyframes orbDriftB { from { transform: translate3d(0, 0, 0) scale(1); } to { transform: translate3d(-5%, -4%, 0) scale(1.10); } }
+
+/* ---------- nav: entrance + link underline + apply glow ---------- */
+.nav { animation: navDrop 0.6s var(--ease) both; }
+@keyframes navDrop { from { opacity: 0; transform: translateY(-14px); } to { opacity: 1; transform: none; } }
+.nav__links a { position: relative; }
+.nav__links a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: -5px; height: 2px;
+  background: var(--grad); border-radius: 2px;
+  transform: scaleX(0); transform-origin: left; transition: transform 0.3s var(--ease);
+}
+.nav__links a:hover::after { transform: scaleX(1); }
+.nav .btn--primary { animation: applyGlow 3.6s ease-in-out infinite; }
+@keyframes applyGlow {
+  0%, 100% { box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.5); }
+  50%      { box-shadow: 0 12px 34px -8px rgba(139, 92, 246, 0.6); }
+}
+
+/* ---------- hero: staged block entrance ---------- */
+.hero-seq > * { opacity: 0; animation: heroRise 0.7s var(--ease) both; }
+.hero-seq > *:nth-child(1) { animation-delay: 0.05s; }
+.hero-seq > *:nth-child(2) { animation-delay: 0.12s; }
+.hero-seq > *:nth-child(3) { animation-delay: 0.19s; }
+.hero-seq > *:nth-child(4) { animation-delay: 0.26s; }
+.hero-seq > *:nth-child(5) { animation-delay: 0.33s; }
+.hero-seq > *:nth-child(6) { animation-delay: 0.40s; }
+.hero-seq > *:nth-child(7) { animation-delay: 0.47s; }
+.hero-seq > *:nth-child(8) { animation-delay: 0.54s; }
+@keyframes heroRise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+/* ---------- hero flow diagram: sequential reveal + data pulse ---------- */
+.flow-anim .flow-card, .flow-anim .flow-line { opacity: 0; animation: flowIn 0.55s var(--ease) both; }
+.flow-anim > *:nth-child(1) { animation-delay: 0.20s; }
+.flow-anim > *:nth-child(2) { animation-delay: 0.29s; }
+.flow-anim > *:nth-child(3) { animation-delay: 0.38s; }
+.flow-anim > *:nth-child(4) { animation-delay: 0.47s; }
+.flow-anim > *:nth-child(5) { animation-delay: 0.56s; }
+.flow-anim > *:nth-child(6) { animation-delay: 0.65s; }
+.flow-anim > *:nth-child(7) { animation-delay: 0.74s; }
+.flow-anim > *:nth-child(8) { animation-delay: 0.83s; }
+.flow-anim > *:nth-child(9) { animation-delay: 0.92s; }
+@keyframes flowIn { from { opacity: 0; transform: translateY(14px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+/* connector: a slow data packet travels the line */
+.flow-line { position: relative; }
+.flow-line::after {
+  content: ""; position: absolute; left: 50%; top: 0; width: 4px; height: 4px; margin-left: -2px;
+  border-radius: 50%; background: var(--cyan); box-shadow: 0 0 8px var(--cyan);
+  opacity: 0; animation: dataFlow 2.6s linear 1.4s infinite;
+}
+@keyframes dataFlow { 0% { top: 0; opacity: 0; } 15% { opacity: 0.9; } 85% { opacity: 0.9; } 100% { top: 100%; opacity: 0; } }
+
+/* active card: the AI team node softly pulses (proof it's working) */
+.flow-anim .flow__node--team::before {
+  content: ""; position: absolute; inset: -1px; border-radius: inherit; pointer-events: none;
+  animation: teamGlow 3.4s ease-in-out 1.8s infinite;
+}
+@keyframes teamGlow {
+  0%, 100% { box-shadow: 0 0 18px -8px rgba(103, 232, 249, 0); }
+  50%      { box-shadow: 0 0 24px -4px rgba(103, 232, 249, 0.42); }
+}
+
+/* ---------- platform cards (was bare text → premium card) ---------- */
+.platform {
+  position: relative;
+  border: 1px solid var(--border); background: var(--surface);
+  border-radius: var(--radius); padding: 30px 24px 26px;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.platform:hover {
+  transform: translateY(-5px); border-color: var(--border-strong); background: var(--surface-2);
+  box-shadow: 0 0 0 1px rgba(103, 232, 249, 0.18), var(--shadow);
+}
+.platform__name { transition: text-shadow 0.3s var(--ease); }
+.platform:hover .platform__name { text-shadow: 0 0 22px rgba(103, 232, 249, 0.35); }
+/* tiny "verified real platform" indicator */
+.platform::after {
+  content: "✓"; position: absolute; top: 16px; right: 16px;
+  width: 22px; height: 22px; border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 11px; font-weight: 800; color: var(--cyan);
+  background: rgba(103, 232, 249, 0.1); border: 1px solid rgba(103, 232, 249, 0.28);
+  opacity: 0.75; transition: opacity 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.platform:hover::after { opacity: 1; box-shadow: 0 0 12px -2px rgba(103, 232, 249, 0.5); }
+
+/* ---------- track cards (was bare text → premium card) ---------- */
+.track {
+  position: relative;
+  border: 1px solid var(--border); background: var(--surface);
+  border-radius: var(--radius); padding: 28px 24px;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease), background 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.track:hover {
+  transform: translateY(-5px); border-color: var(--border-strong); background: var(--surface-2);
+  box-shadow: 0 0 0 1px rgba(103, 232, 249, 0.16), var(--shadow);
+}
+.track__ico { transition: transform 0.3s var(--ease); }
+.track:hover .track__ico { transform: translateY(-2px) scale(1.06); }
+.track:hover .track__ico .ico { filter: drop-shadow(0 0 8px rgba(103, 232, 249, 0.5)); }
+.track .link { display: inline-flex; align-items: center; gap: 4px; transition: color 0.2s var(--ease), transform 0.25s var(--ease); }
+.track:hover .link { color: var(--cyan); transform: translateX(3px); }
+
+/* ---------- featured OPC models: revenue chips rise on hover ---------- */
+.model .chips span { transition: transform 0.28s var(--ease), border-color 0.28s var(--ease); }
+.model:hover .chips span { transform: translateY(-3px); border-color: rgba(103, 232, 249, 0.3); }
+.model:hover { box-shadow: 0 0 0 1px rgba(103, 232, 249, 0.16), var(--shadow); }
+
+/* ---------- product mockups: hover scan line + screen glow ---------- */
+.mock__screen { position: relative; overflow: hidden; transition: background 0.3s var(--ease); }
+.mock__screen::after {
+  content: ""; position: absolute; left: 0; right: 0; top: 0; height: 42%;
+  background: linear-gradient(180deg, rgba(103, 232, 249, 0.08), transparent);
+  transform: translateY(-120%); transition: transform 0.6s var(--ease); pointer-events: none;
+}
+.mock:hover .mock__screen::after { transform: translateY(255%); }
+.mock:hover .mock__screen { background: radial-gradient(130% 90% at 0% 0%, rgba(59, 130, 246, 0.12), transparent 55%); }
+/* active workflow node: gentle running pulse (proof of process) */
+.mk-node--on i { animation: nodePing 2.2s ease-in-out infinite; }
+@keyframes nodePing { 0%, 100% { box-shadow: 0 0 8px var(--cyan); } 50% { box-shadow: 0 0 16px var(--cyan); } }
+
+/* ---------- how-it-works steps: connector draws in ---------- */
+.steps { position: relative; }
+.steps::before {
+  content: ""; position: absolute; top: 44px; bottom: 44px; left: 27px; width: 2px;
+  background: var(--grad); opacity: 0.28;
+  transform: scaleY(0); transform-origin: top; transition: transform 1.4s var(--ease);
+}
+.steps.is-visible::before, .steps.in::before { transform: scaleY(1); }
+
+/* ---------- admission process: connector draws + current step glow ---------- */
+.process { position: relative; }
+.process::before {
+  content: ""; position: absolute; top: 50px; left: 12%; right: 12%; height: 2px;
+  background: var(--grad); opacity: 0.4;
+  transform: scaleX(0); transform-origin: left; transition: transform 1.1s var(--ease) 0.1s;
+}
+.process.is-visible::before, .process.in::before { transform: scaleX(1); }
+.pstep { position: relative; z-index: 1; }
+.pstep:first-child .pstep__num { animation: stepGlow 3.2s ease-in-out infinite; }
+@keyframes stepGlow {
+  0%, 100% { box-shadow: 0 10px 24px -12px rgba(59, 130, 246, 0.6), 0 0 0 0 rgba(103, 232, 249, 0); }
+  50%      { box-shadow: 0 10px 24px -12px rgba(59, 130, 246, 0.6), 0 0 0 6px rgba(103, 232, 249, 0.1); }
+}
+@media (max-width: 980px) { .process::before { display: none; } }
+
+/* ---------- FAQ: smooth open + background glow (chevron already rotates) ---------- */
+.faq__item { transition: border-color 0.25s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease); }
+.faq__item[open] {
+  border-color: var(--border-strong);
+  box-shadow: 0 0 0 1px rgba(103, 232, 249, 0.12), 0 16px 40px -28px rgba(59, 130, 246, 0.55);
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.05), rgba(255, 255, 255, 0.01));
+}
+.faq__item[open] p { animation: faqReveal 0.35s var(--ease) both; }
+@keyframes faqReveal { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+/* ---------- footer: logo glow ---------- */
+.footer__logo { animation: logoGlow 6s ease-in-out infinite; }
+@keyframes logoGlow {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(103, 232, 249, 0.12)); }
+  50%      { filter: drop-shadow(0 0 14px rgba(103, 232, 249, 0.28)); }
+}
+
+/* ---------- apply form: submit loading spinner ---------- */
+.btn.is-loading { position: relative; color: transparent !important; pointer-events: none; }
+.btn.is-loading::after {
+  content: ""; position: absolute; top: 50%; left: 50%; width: 16px; height: 16px; margin: -8px 0 0 -8px;
+  border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.4); border-top-color: #fff;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ---------- mobile: lighten ambient + connector motion ---------- */
+@media (max-width: 720px) {
+  .ambient-orb { filter: blur(46px); opacity: 0.6; }
+  .flow-line::after { display: none; }
+  .steps::before { left: 21px; }
+}
+
+/* ---------- reduced motion: disable non-essential motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ambient-orb, .nav, .nav .btn--primary, .footer__logo,
+  .pstep:first-child .pstep__num, .flow-line::after,
+  .flow-anim .flow__node--team::before, .mk-node--on i { animation: none !important; }
+  .hero-seq > *, .flow-anim .flow-card, .flow-anim .flow-line {
+    opacity: 1 !important; transform: none !important; animation: none !important;
+  }
+  .reveal-up, .reveal-scale, .timeline-step, .stagger-item { opacity: 1 !important; transform: none !important; }
+  .steps::before, .process::before { transform: none !important; }
+  .mock__screen::after { display: none; }
 }
