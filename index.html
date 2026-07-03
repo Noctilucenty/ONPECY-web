@@ -218,9 +218,9 @@
           <article class="mock reveal">
             <div class="mock__bar" aria-hidden="true"><span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span><span>customer-agent</span></div>
             <div class="mock__screen">
-              <div class="mk-bubble mk-bubble--user">When does my BLS card expire?</div>
-              <div class="mk-bubble mk-bubble--bot">Your BLS certification is valid until Mar 2027. I can book a renewal at the downtown center — Saturday 10am works. Confirm?</div>
-              <div class="mk-input"><span>Message the agent…</span><b aria-hidden="true"><i class="mk-send"></i></b></div>
+              <div class="mk-bubble mk-bubble--user" data-i18n="mock1_user">When does my BLS card expire?</div>
+              <div class="mk-bubble mk-bubble--bot" data-i18n="mock1_bot">Your BLS certification is valid until Mar 2027. I can book a renewal at the downtown center — Saturday 10am works. Confirm?</div>
+              <div class="mk-input"><span data-i18n="mock1_input">Message the agent…</span><b aria-hidden="true"><i class="mk-send"></i></b></div>
             </div>
             <div class="mock__foot">
               <div><div class="mock__name" data-i18n="mock1_name">AI Customer Agent</div><div class="mock__cap" data-i18n="mock1_cap">Answers customer questions across every platform and escalates when unsure.</div></div>
@@ -233,13 +233,13 @@
             <div class="mock__bar" aria-hidden="true"><span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span><span>marketing-flow</span></div>
             <div class="mock__screen">
               <div class="mk-wf">
-                <div class="mk-node"><i></i>New brief</div>
+                <div class="mk-node"><i></i><span data-i18n="mock2_n1">New brief</span></div>
                 <div class="mk-link"></div>
-                <div class="mk-node mk-node--on"><i></i>AI content draft <small data-i18n="mock_running">running</small></div>
+                <div class="mk-node mk-node--on"><i></i><span data-i18n="mock2_n2">AI content draft</span> <small data-i18n="mock_running">running</small></div>
                 <div class="mk-link"></div>
-                <div class="mk-node"><i></i>SEO / GEO pass</div>
+                <div class="mk-node"><i></i><span data-i18n="mock2_n3">SEO / GEO pass</span></div>
                 <div class="mk-link"></div>
-                <div class="mk-node"><i></i>Schedule &amp; publish</div>
+                <div class="mk-node"><i></i><span data-i18n="mock2_n4">Schedule &amp; publish</span></div>
               </div>
             </div>
             <div class="mock__foot">
@@ -271,9 +271,9 @@
           <article class="mock reveal">
             <div class="mock__bar" aria-hidden="true"><span class="mock__dot"></span><span class="mock__dot"></span><span class="mock__dot"></span><span>knowledge-base</span></div>
             <div class="mock__screen">
-              <div class="mk-search"><svg class="ico" aria-hidden="true"><use href="#ic-search" /></svg>What's the CPR renewal policy?</div>
-              <div class="mk-ans">Certification is valid for 2 years. Renewal requires a skills check-off with a certified instructor and a short written exam.</div>
-              <div class="mk-src"><span data-i18n="mock_src">Sources</span><span>policy.pdf</span><span>handbook §4</span><span>faq</span></div>
+              <div class="mk-search"><svg class="ico" aria-hidden="true"><use href="#ic-search" /></svg><span data-i18n="mock4_q">What's the CPR renewal policy?</span></div>
+              <div class="mk-ans" data-i18n="mock4_ans">Certification is valid for 2 years. Renewal requires a skills check-off with a certified instructor and a short written exam.</div>
+              <div class="mk-src"><span data-i18n="mock_src">Sources</span><span>policy.pdf</span><span data-i18n="mock4_src_handbook">handbook §4</span><span>faq</span></div>
             </div>
             <div class="mock__foot">
               <div><div class="mock__name" data-i18n="mock4_name">Knowledge Base Agent</div><div class="mock__cap" data-i18n="mock4_cap">Answers from your own documents with cited sources.</div></div>
@@ -615,7 +615,7 @@
     </div>
   </footer>
 
-  <script src="i18n.js?v=3"></script>
+  <script src="i18n.js?v=4"></script>
   <script src="app.js?v=4"></script>
 </body>
 </html>

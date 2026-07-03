@@ -38,6 +38,14 @@
     mock3_name: '运营仪表盘', mock3_cap: '在一个运营者视图中跟踪预约、任务与响应时间。',
     mock4_name: '知识库智能体', mock4_cap: '基于你自己的文档作答，并标注引用来源。',
     mock_running: '运行中', mock_stat_bookings: '预约', mock_stat_tasks: '待办', mock_stat_reply: '平均响应', mock_src: '来源',
+    // mockup screen content
+    mock1_user: 'BLS 证书什么时候到期？',
+    mock1_bot: '你的 BLS 认证有效期至 2027 年 3 月。我可以在市中心的培训中心为你预约续证 —— 周六上午 10 点可以，确认吗？',
+    mock1_input: '给智能体发消息…',
+    mock2_n1: '新简报', mock2_n2: 'AI 内容草稿', mock2_n3: 'SEO / GEO 校验', mock2_n4: '排期与发布',
+    mock4_q: 'CPR 续证政策是什么？',
+    mock4_ans: '认证有效期为 2 年。续证需在持证讲师处完成技能考核，并通过一场简短的笔试。',
+    mock4_src_handbook: '手册 §4',
     // how
     how_t1: '课程如何', how_t2: '运作。',
     how_lead: '四个阶段，从学习工具栈到运营一家一人公司。',
